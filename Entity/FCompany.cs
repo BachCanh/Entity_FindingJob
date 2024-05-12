@@ -117,8 +117,9 @@ namespace Entity
 
         private void btnPostJob_Click(object sender, EventArgs e)
         {
-            //company = new Company(informationDAO.FetchCommon(account));
-            //OpenChildForm(new FPostJob(company.Jobs, company.INFO.ID));
+            company = com.FetchCompanyInformationBasedEmail(account.Email);
+            List<Job> jobs = company.Jobs.ToList();
+            OpenChildForm(new FPostJob(jobs, company.ID));
         }
         private void btnSetting_Click(object sender, EventArgs e)
         {
@@ -139,5 +140,7 @@ namespace Entity
         {
             //OpenChildForm(new FFindApplicant(company.INFO.ID));
         }
+
+        
     }
 }

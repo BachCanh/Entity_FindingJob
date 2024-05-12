@@ -58,9 +58,9 @@ namespace Entity
             this.panel1.Controls.Add(this.metroControlBox3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1112, 21);
+            this.panel1.Size = new System.Drawing.Size(1483, 26);
             this.panel1.TabIndex = 2;
             // 
             // metroControlBox3
@@ -73,8 +73,8 @@ namespace Entity
             this.metroControlBox3.DisabledForeColor = System.Drawing.Color.DimGray;
             this.metroControlBox3.Dock = System.Windows.Forms.DockStyle.Right;
             this.metroControlBox3.IsDerivedStyle = true;
-            this.metroControlBox3.Location = new System.Drawing.Point(1012, 0);
-            this.metroControlBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.metroControlBox3.Location = new System.Drawing.Point(1383, 0);
+            this.metroControlBox3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.metroControlBox3.MaximizeBox = true;
             this.metroControlBox3.MaximizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.metroControlBox3.MaximizeHoverForeColor = System.Drawing.Color.Gray;
@@ -103,9 +103,10 @@ namespace Entity
             this.panel2.Controls.Add(this.btnPostJob);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 21);
+            this.panel2.Location = new System.Drawing.Point(0, 26);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(173, 584);
+            this.panel2.Size = new System.Drawing.Size(231, 719);
             this.panel2.TabIndex = 3;
             // 
             // btnLogOut
@@ -126,11 +127,12 @@ namespace Entity
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogOut.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnLogOut.Location = new System.Drawing.Point(0, 399);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 490);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.ShadowDecoration.Color = System.Drawing.Color.White;
             this.btnLogOut.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2);
-            this.btnLogOut.Size = new System.Drawing.Size(173, 62);
+            this.btnLogOut.Size = new System.Drawing.Size(231, 76);
             this.btnLogOut.TabIndex = 3;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -153,11 +155,12 @@ namespace Entity
             this.btnApplicant.Image = ((System.Drawing.Image)(resources.GetObject("btnApplicant.Image")));
             this.btnApplicant.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnApplicant.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnApplicant.Location = new System.Drawing.Point(0, 337);
+            this.btnApplicant.Location = new System.Drawing.Point(0, 414);
+            this.btnApplicant.Margin = new System.Windows.Forms.Padding(4);
             this.btnApplicant.Name = "btnApplicant";
             this.btnApplicant.ShadowDecoration.Color = System.Drawing.Color.White;
             this.btnApplicant.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2);
-            this.btnApplicant.Size = new System.Drawing.Size(173, 62);
+            this.btnApplicant.Size = new System.Drawing.Size(231, 76);
             this.btnApplicant.TabIndex = 2;
             this.btnApplicant.Text = "Applicants";
             this.btnApplicant.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -180,11 +183,12 @@ namespace Entity
             this.btnInterviewView.Image = ((System.Drawing.Image)(resources.GetObject("btnInterviewView.Image")));
             this.btnInterviewView.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnInterviewView.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnInterviewView.Location = new System.Drawing.Point(0, 291);
+            this.btnInterviewView.Location = new System.Drawing.Point(0, 357);
+            this.btnInterviewView.Margin = new System.Windows.Forms.Padding(4);
             this.btnInterviewView.Name = "btnInterviewView";
             this.btnInterviewView.ShadowDecoration.Color = System.Drawing.Color.White;
             this.btnInterviewView.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2);
-            this.btnInterviewView.Size = new System.Drawing.Size(173, 46);
+            this.btnInterviewView.Size = new System.Drawing.Size(231, 57);
             this.btnInterviewView.TabIndex = 4;
             this.btnInterviewView.Text = "Interviews";
             this.btnInterviewView.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -207,11 +211,12 @@ namespace Entity
             this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
             this.btnSetting.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSetting.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSetting.Location = new System.Drawing.Point(0, 229);
+            this.btnSetting.Location = new System.Drawing.Point(0, 281);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(4);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.ShadowDecoration.Color = System.Drawing.Color.White;
             this.btnSetting.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2);
-            this.btnSetting.Size = new System.Drawing.Size(173, 62);
+            this.btnSetting.Size = new System.Drawing.Size(231, 76);
             this.btnSetting.TabIndex = 2;
             this.btnSetting.Text = "Profile";
             this.btnSetting.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -234,11 +239,12 @@ namespace Entity
             this.btnHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnHistory.Image")));
             this.btnHistory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHistory.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnHistory.Location = new System.Drawing.Point(0, 167);
+            this.btnHistory.Location = new System.Drawing.Point(0, 205);
+            this.btnHistory.Margin = new System.Windows.Forms.Padding(4);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.ShadowDecoration.Color = System.Drawing.Color.White;
             this.btnHistory.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2);
-            this.btnHistory.Size = new System.Drawing.Size(173, 62);
+            this.btnHistory.Size = new System.Drawing.Size(231, 76);
             this.btnHistory.TabIndex = 1;
             this.btnHistory.Text = "History";
             this.btnHistory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -261,22 +267,25 @@ namespace Entity
             this.btnPostJob.Image = ((System.Drawing.Image)(resources.GetObject("btnPostJob.Image")));
             this.btnPostJob.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPostJob.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnPostJob.Location = new System.Drawing.Point(0, 105);
+            this.btnPostJob.Location = new System.Drawing.Point(0, 129);
+            this.btnPostJob.Margin = new System.Windows.Forms.Padding(4);
             this.btnPostJob.Name = "btnPostJob";
             this.btnPostJob.ShadowDecoration.Color = System.Drawing.Color.White;
             this.btnPostJob.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2);
-            this.btnPostJob.Size = new System.Drawing.Size(173, 62);
+            this.btnPostJob.Size = new System.Drawing.Size(231, 76);
             this.btnPostJob.TabIndex = 0;
             this.btnPostJob.Text = "List of Job";
             this.btnPostJob.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPostJob.Click += new System.EventHandler(this.btnPostJob_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(173, 105);
+            this.pictureBox2.Size = new System.Drawing.Size(231, 129);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -285,22 +294,23 @@ namespace Entity
             // 
             this.pnBody.AutoScroll = true;
             this.pnBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnBody.Location = new System.Drawing.Point(173, 21);
+            this.pnBody.Location = new System.Drawing.Point(231, 26);
+            this.pnBody.Margin = new System.Windows.Forms.Padding(4);
             this.pnBody.Name = "pnBody";
-            this.pnBody.Size = new System.Drawing.Size(939, 584);
+            this.pnBody.Size = new System.Drawing.Size(1252, 719);
             this.pnBody.TabIndex = 4;
             // 
             // FCompany
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1112, 605);
+            this.ClientSize = new System.Drawing.Size(1483, 745);
             this.Controls.Add(this.pnBody);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "FCompany";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FCompany";
