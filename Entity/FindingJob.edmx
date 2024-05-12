@@ -1,0 +1,1622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FindingJob2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="255" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Apply">
+          <Key>
+            <PropertyRef Name="JobSeekerID" />
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobSeekerID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="JobID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="TimeApply" Type="datetime" />
+          <Property Name="Status" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="Address" Type="varchar" MaxLength="255" />
+          <Property Name="CompanyType" Type="varchar" MaxLength="100" />
+          <Property Name="CompanySize" Type="varchar" MaxLength="100" />
+          <Property Name="Phonenumber" Type="nchar" MaxLength="100" />
+          <Property Name="WorkingTimeBegin" Type="varchar" MaxLength="20" />
+          <Property Name="Avatar" Type="varbinary(max)" />
+          <Property Name="WorkingTimeEnd" Type="varchar" MaxLength="50" />
+          <Property Name="TaxIdentification" Type="varchar" MaxLength="50" />
+          <Property Name="BusinessLicense" Type="varbinary(max)" />
+          <Property Name="Detail" Type="text" />
+          <Property Name="WebsiteLink" Type="text" />
+          <Property Name="Like" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="CompanyLikeJobSeeker">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+            <PropertyRef Name="JobSeekerID" />
+          </Key>
+          <Property Name="CompanyID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="JobSeekerID" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CompanyLikeJobSeekerCV">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+            <PropertyRef Name="JobSeekerID" />
+          </Key>
+          <Property Name="CompanyID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="JobSeekerID" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CompanySendOffer">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+            <PropertyRef Name="JobSeekerID" />
+          </Key>
+          <Property Name="CompanyID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="JobSeekerID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Status" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CV">
+          <Key>
+            <PropertyRef Name="JobSeekerID" />
+          </Key>
+          <Property Name="JobSeekerID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="CV" Type="varbinary(max)" />
+          <Property Name="CVPicture" Type="varbinary(max)" />
+          <Property Name="LikeCount" Type="int" />
+        </EntityType>
+        <EntityType Name="ImgCompany">
+          <Key>
+            <PropertyRef Name="companyID" />
+          </Key>
+          <Property Name="companyID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="ImgID1" Type="varbinary(max)" />
+          <Property Name="ImgID2" Type="varbinary(max)" />
+          <Property Name="ImgID3" Type="varbinary(max)" />
+          <Property Name="ImgID4" Type="varbinary(max)" />
+          <Property Name="ImgID5" Type="varbinary(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FindingJob2.dbo.Interview' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Interview">
+          <Key>
+            <PropertyRef Name="IdJSeeker" />
+            <PropertyRef Name="IdJob" />
+          </Key>
+          <Property Name="IdJSeeker" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="IdJob" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="TimeInterview" Type="varchar" MaxLength="50" />
+          <Property Name="DateInterview" Type="date" />
+          <Property Name="Status" Type="varchar" MaxLength="100" />
+          <Property Name="companyID" Type="varchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="CompanyID" Type="varchar" MaxLength="4" />
+          <Property Name="JobName" Type="varchar" MaxLength="255" />
+          <Property Name="Position" Type="varchar" MaxLength="255" />
+          <Property Name="Salary" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DatePublish" Type="datetime" />
+          <Property Name="requirement" Type="text" />
+          <Property Name="description" Type="text" />
+          <Property Name="status" Type="nchar" MaxLength="10" />
+          <Property Name="benefit" Type="text" />
+          <Property Name="DateEnd" Type="date" />
+          <Property Name="WorkingForm" Type="nchar" MaxLength="20" />
+          <Property Name="Like" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="JobAlert">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="senderID" Type="varchar" MaxLength="4" />
+          <Property Name="recipientID" Type="varchar" MaxLength="4" />
+          <Property Name="Subject" Type="text" />
+          <Property Name="content" Type="text" />
+          <Property Name="DateReply" Type="datetime" />
+          <Property Name="jobID" Type="varchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="JobOffer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="senderID" Type="varchar" MaxLength="4" />
+          <Property Name="recipientID" Type="varchar" MaxLength="4" />
+          <Property Name="Subject" Type="text" />
+          <Property Name="content" Type="text" />
+          <Property Name="DateReply" Type="datetime" />
+          <Property Name="Status" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="JobPreference">
+          <Key>
+            <PropertyRef Name="JobSeekerID" />
+          </Key>
+          <Property Name="JobSeekerID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="Position" Type="nvarchar" MaxLength="255" />
+          <Property Name="CompanyType" Type="nvarchar" MaxLength="255" />
+          <Property Name="WorkingForm" Type="nvarchar" MaxLength="255" />
+          <Property Name="CompanySize" Type="nvarchar" MaxLength="255" />
+          <Property Name="Location" Type="nvarchar" MaxLength="255" />
+          <Property Name="Salary" Type="int" />
+          <Property Name="Deadline" Type="datetime" />
+          <Property Name="Skill1" Type="nvarchar" MaxLength="100" />
+          <Property Name="Skill2" Type="nvarchar" MaxLength="100" />
+          <Property Name="Skill3" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="JobSeeker">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="Address" Type="varchar" MaxLength="255" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="NationalID" Type="varchar" MaxLength="20" />
+          <Property Name="Avatar" Type="varbinary(max)" />
+          <Property Name="Gender" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="JobSeekerLikeCompany">
+          <Key>
+            <PropertyRef Name="JobSeekerID" />
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="JobSeekerID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="CompanyID" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobSeekerLikeJob">
+          <Key>
+            <PropertyRef Name="JobSeekerID" />
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobSeekerID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="JobID" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobSkill">
+          <Key>
+            <PropertyRef Name="jobID" />
+          </Key>
+          <Property Name="jobID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Skill1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Skill2" Type="varchar" MaxLength="50" />
+          <Property Name="Skill3" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FindingJob2.dbo.Rating' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Rating">
+          <Key>
+            <PropertyRef Name="JobSeekerID" />
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="JobSeekerID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="CompanyID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="TimeRate" Type="datetime" />
+          <Property Name="content" Type="varchar" MaxLength="255" />
+          <Property Name="rate" Type="int" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="JobseekerID" />
+          </Key>
+          <Property Name="JobseekerID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="CV" Type="varbinary(max)" />
+          <Property Name="CVPicture" Type="varbinary(max)" />
+          <Property Name="Like" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UpdatableJobView">
+          <Key>
+            <PropertyRef Name="JobID" />
+            <PropertyRef Name="Skill1" />
+          </Key>
+          <Property Name="JobID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="JobName" Type="varchar" MaxLength="255" />
+          <Property Name="Position" Type="varchar" MaxLength="255" />
+          <Property Name="Salary" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DatePublish" Type="datetime" />
+          <Property Name="status" Type="nchar" MaxLength="10" />
+          <Property Name="Skill1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Skill2" Type="varchar" MaxLength="50" />
+          <Property Name="Skill3" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__Apply__JobID__498EEC8D">
+          <End Role="Job" Type="Self.Job" Multiplicity="1" />
+          <End Role="Apply" Type="Self.Apply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="Apply">
+              <PropertyRef Name="JobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Apply__JobSeeker__489AC854">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="Apply" Type="Self.Apply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Apply">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompanySe__Compa__1A34DF26">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="CompanySendOffer" Type="Self.CompanySendOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CompanySendOffer">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompanySe__JobSe__1B29035F">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="CompanySendOffer" Type="Self.CompanySendOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CompanySendOffer">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ImgCompan__compa__0E04126B">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="ImgCompany" Type="Self.ImgCompany" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ImgCompany">
+              <PropertyRef Name="companyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Job__CompanyID__7755B73D">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Job" Type="Self.Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JobAlert__recipi__57A801BA">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="0..1" />
+          <End Role="JobAlert" Type="Self.JobAlert" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobAlert">
+              <PropertyRef Name="recipientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JobAlert__sender__56B3DD81">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="JobAlert" Type="Self.JobAlert" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobAlert">
+              <PropertyRef Name="senderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JobOffer__recipi__16644E42">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="0..1" />
+          <End Role="JobOffer" Type="Self.JobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobOffer">
+              <PropertyRef Name="recipientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JobOffer__sender__15702A09">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="JobOffer" Type="Self.JobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobOffer">
+              <PropertyRef Name="senderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JobSkill__jobID__67DE6983">
+          <End Role="Job" Type="Self.Job" Multiplicity="1" />
+          <End Role="JobSkill" Type="Self.JobSkill" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="JobSkill">
+              <PropertyRef Name="jobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Table__Jobseeker__2116E6DF">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="JobseekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AccountCompany">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Email" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="Email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AccountJobSeeker">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Email" />
+            </Principal>
+            <Dependent Role="JobSeeker">
+              <PropertyRef Name="Email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyLikeJobSeeker_CompanyID">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="CompanyLikeJobSeeker" Type="Self.CompanyLikeJobSeeker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CompanyLikeJobSeeker">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyLikeJobSeeker_JobSeekerID">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="CompanyLikeJobSeeker" Type="Self.CompanyLikeJobSeeker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CompanyLikeJobSeeker">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyLikeJobSeekerCV_CompanyID">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="CompanyLikeJobSeekerCV" Type="Self.CompanyLikeJobSeekerCV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CompanyLikeJobSeekerCV">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyLikeJobSeekerCV_JobSeekerID">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="CompanyLikeJobSeekerCV" Type="Self.CompanyLikeJobSeekerCV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CompanyLikeJobSeekerCV">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CV_JobSeeker">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CV" Type="Self.CV" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CV">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobPreference_JobSeeker">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="JobPreference" Type="Self.JobPreference" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobPreference">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobSeekerLikeCompany_CompanyID">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="JobSeekerLikeCompany" Type="Self.JobSeekerLikeCompany" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobSeekerLikeCompany">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobSeekerLikeCompany_JobSeekerID">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="JobSeekerLikeCompany" Type="Self.JobSeekerLikeCompany" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobSeekerLikeCompany">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobSeekerLikeJob_JobID">
+          <End Role="Job" Type="Self.Job" Multiplicity="1" />
+          <End Role="JobSeekerLikeJob" Type="Self.JobSeekerLikeJob" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="JobSeekerLikeJob">
+              <PropertyRef Name="JobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobSeekerLikeJob_JobSeekerID">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="JobSeekerLikeJob" Type="Self.JobSeekerLikeJob" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobSeekerLikeJob">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rating_Company">
+          <End Role="Company" Type="Self.Company" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rating">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rating_JobSeeker">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rating">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="CountWaitingJobs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="GetCompanyWithMostRecruitedCandidates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="CandidatesRecruited" Type="int" />
+                <Property Name="IDcompany" Type="varchar" MaxLength="4" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="GetImageCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="companyID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetSkillCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="jobID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertJobAndGetID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyID" Type="varchar" Mode="In" />
+          <Parameter Name="JobName" Type="varchar" Mode="In" />
+          <Parameter Name="Position" Type="varchar" Mode="In" />
+          <Parameter Name="Salary" Type="decimal" Mode="In" />
+          <Parameter Name="requirement" Type="text" Mode="In" />
+          <Parameter Name="description" Type="text" Mode="In" />
+          <Parameter Name="benefit" Type="text" Mode="In" />
+          <Parameter Name="WorkingForm" Type="nchar" Mode="In" />
+          <Parameter Name="DateEnd" Type="date" Mode="In" />
+          <Parameter Name="JobID" Type="varchar" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="FindingJob2ModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Apply" EntityType="Self.Apply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyLikeJobSeeker" EntityType="Self.CompanyLikeJobSeeker" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyLikeJobSeekerCV" EntityType="Self.CompanyLikeJobSeekerCV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanySendOffer" EntityType="Self.CompanySendOffer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CV" EntityType="Self.CV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImgCompany" EntityType="Self.ImgCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobAlert" EntityType="Self.JobAlert" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobOffer" EntityType="Self.JobOffer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobPreference" EntityType="Self.JobPreference" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobSeeker" EntityType="Self.JobSeeker" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobSeekerLikeCompany" EntityType="Self.JobSeekerLikeCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobSeekerLikeJob" EntityType="Self.JobSeekerLikeJob" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobSkill" EntityType="Self.JobSkill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Interview" EntityType="Self.Interview" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Interview].[IdJSeeker] AS [IdJSeeker], 
+    [Interview].[IdJob] AS [IdJob], 
+    [Interview].[TimeInterview] AS [TimeInterview], 
+    [Interview].[DateInterview] AS [DateInterview], 
+    [Interview].[Status] AS [Status], 
+    [Interview].[companyID] AS [companyID]
+    FROM [dbo].[Interview] AS [Interview]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Rating" EntityType="Self.Rating" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Rating].[JobSeekerID] AS [JobSeekerID], 
+    [Rating].[CompanyID] AS [CompanyID], 
+    [Rating].[TimeRate] AS [TimeRate], 
+    [Rating].[content] AS [content], 
+    [Rating].[rate] AS [rate]
+    FROM [dbo].[Rating] AS [Rating]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UpdatableJobView" EntityType="Self.UpdatableJobView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UpdatableJobView].[JobID] AS [JobID], 
+    [UpdatableJobView].[JobName] AS [JobName], 
+    [UpdatableJobView].[Position] AS [Position], 
+    [UpdatableJobView].[Salary] AS [Salary], 
+    [UpdatableJobView].[DatePublish] AS [DatePublish], 
+    [UpdatableJobView].[status] AS [status], 
+    [UpdatableJobView].[Skill1] AS [Skill1], 
+    [UpdatableJobView].[Skill2] AS [Skill2], 
+    [UpdatableJobView].[Skill3] AS [Skill3]
+    FROM [dbo].[UpdatableJobView] AS [UpdatableJobView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Apply__JobID__498EEC8D" Association="Self.FK__Apply__JobID__498EEC8D">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="Apply" EntitySet="Apply" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Apply__JobSeeker__489AC854" Association="Self.FK__Apply__JobSeeker__489AC854">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="Apply" EntitySet="Apply" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompanySe__Compa__1A34DF26" Association="Self.FK__CompanySe__Compa__1A34DF26">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="CompanySendOffer" EntitySet="CompanySendOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompanySe__JobSe__1B29035F" Association="Self.FK__CompanySe__JobSe__1B29035F">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="CompanySendOffer" EntitySet="CompanySendOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ImgCompan__compa__0E04126B" Association="Self.FK__ImgCompan__compa__0E04126B">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="ImgCompany" EntitySet="ImgCompany" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Job__CompanyID__7755B73D" Association="Self.FK__Job__CompanyID__7755B73D">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Job" EntitySet="Job" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JobAlert__recipi__57A801BA" Association="Self.FK__JobAlert__recipi__57A801BA">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="JobAlert" EntitySet="JobAlert" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JobAlert__sender__56B3DD81" Association="Self.FK__JobAlert__sender__56B3DD81">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="JobAlert" EntitySet="JobAlert" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JobOffer__recipi__16644E42" Association="Self.FK__JobOffer__recipi__16644E42">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="JobOffer" EntitySet="JobOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JobOffer__sender__15702A09" Association="Self.FK__JobOffer__sender__15702A09">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="JobOffer" EntitySet="JobOffer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JobSkill__jobID__67DE6983" Association="Self.FK__JobSkill__jobID__67DE6983">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="JobSkill" EntitySet="JobSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Table__Jobseeker__2116E6DF" Association="Self.FK__Table__Jobseeker__2116E6DF">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="Table" EntitySet="Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AccountCompany" Association="Self.FK_AccountCompany">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AccountJobSeeker" Association="Self.FK_AccountJobSeeker">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyLikeJobSeeker_CompanyID" Association="Self.FK_CompanyLikeJobSeeker_CompanyID">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="CompanyLikeJobSeeker" EntitySet="CompanyLikeJobSeeker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyLikeJobSeeker_JobSeekerID" Association="Self.FK_CompanyLikeJobSeeker_JobSeekerID">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="CompanyLikeJobSeeker" EntitySet="CompanyLikeJobSeeker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyLikeJobSeekerCV_CompanyID" Association="Self.FK_CompanyLikeJobSeekerCV_CompanyID">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="CompanyLikeJobSeekerCV" EntitySet="CompanyLikeJobSeekerCV" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyLikeJobSeekerCV_JobSeekerID" Association="Self.FK_CompanyLikeJobSeekerCV_JobSeekerID">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="CompanyLikeJobSeekerCV" EntitySet="CompanyLikeJobSeekerCV" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CV_JobSeeker" Association="Self.FK_CV_JobSeeker">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="CV" EntitySet="CV" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobPreference_JobSeeker" Association="Self.FK_JobPreference_JobSeeker">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="JobPreference" EntitySet="JobPreference" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobSeekerLikeCompany_CompanyID" Association="Self.FK_JobSeekerLikeCompany_CompanyID">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="JobSeekerLikeCompany" EntitySet="JobSeekerLikeCompany" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobSeekerLikeCompany_JobSeekerID" Association="Self.FK_JobSeekerLikeCompany_JobSeekerID">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="JobSeekerLikeCompany" EntitySet="JobSeekerLikeCompany" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobSeekerLikeJob_JobID" Association="Self.FK_JobSeekerLikeJob_JobID">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="JobSeekerLikeJob" EntitySet="JobSeekerLikeJob" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobSeekerLikeJob_JobSeekerID" Association="Self.FK_JobSeekerLikeJob_JobSeekerID">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="JobSeekerLikeJob" EntitySet="JobSeekerLikeJob" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rating_Company" Association="Self.FK_Rating_Company">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Rating" EntitySet="Rating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rating_JobSeeker" Association="Self.FK_Rating_JobSeeker">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="Rating" EntitySet="Rating" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FindingJob2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="GetCompanyWithMostRecruitedCandidates_Result">
+          <Property Name="CandidatesRecruited" Type="Int32" />
+          <Property Name="IDcompany" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK_AccountCompany" FromRole="Account" ToRole="Company" />
+          <NavigationProperty Name="JobSeekers" Relationship="Self.FK_AccountJobSeeker" FromRole="Account" ToRole="JobSeeker" />
+        </EntityType>
+        <EntityType Name="Apply">
+          <Key>
+            <PropertyRef Name="JobSeekerID" />
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobSeekerID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="JobID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TimeApply" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Job" Relationship="Self.FK__Apply__JobID__498EEC8D" FromRole="Apply" ToRole="Job" />
+          <NavigationProperty Name="JobSeeker" Relationship="Self.FK__Apply__JobSeeker__489AC854" FromRole="Apply" ToRole="JobSeeker" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CompanySize" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Phonenumber" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="WorkingTimeBegin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="WorkingTimeEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TaxIdentification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessLicense" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WebsiteLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Like" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_AccountCompany" FromRole="Company" ToRole="Account" />
+          <NavigationProperty Name="CompanySendOffers" Relationship="Self.FK__CompanySe__Compa__1A34DF26" FromRole="Company" ToRole="CompanySendOffer" />
+          <NavigationProperty Name="ImgCompany" Relationship="Self.FK__ImgCompan__compa__0E04126B" FromRole="Company" ToRole="ImgCompany" />
+          <NavigationProperty Name="Jobs" Relationship="Self.FK__Job__CompanyID__7755B73D" FromRole="Company" ToRole="Job" />
+          <NavigationProperty Name="JobAlerts" Relationship="Self.FK__JobAlert__sender__56B3DD81" FromRole="Company" ToRole="JobAlert" />
+          <NavigationProperty Name="JobOffers" Relationship="Self.FK__JobOffer__sender__15702A09" FromRole="Company" ToRole="JobOffer" />
+          <NavigationProperty Name="CompanyLikeJobSeeker" Relationship="Self.CompanyLikeJobSeeker" FromRole="Company" ToRole="JobSeeker" />
+          <NavigationProperty Name="CompanyLikeJobSeekerCV" Relationship="Self.CompanyLikeJobSeekerCV" FromRole="Company" ToRole="JobSeeker" />
+          <NavigationProperty Name="JobSeekerLikeCompany" Relationship="Self.JobSeekerLikeCompany" FromRole="Company" ToRole="JobSeeker" />
+          <NavigationProperty Name="Ratings" Relationship="FindingJob2Model.FK_Rating_Company" FromRole="Company" ToRole="Rating" />
+        </EntityType>
+        <EntityType Name="CompanySendOffer">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+            <PropertyRef Name="JobSeekerID" />
+          </Key>
+          <Property Name="CompanyID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="JobSeekerID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Company" Relationship="Self.FK__CompanySe__Compa__1A34DF26" FromRole="CompanySendOffer" ToRole="Company" />
+          <NavigationProperty Name="JobSeeker" Relationship="Self.FK__CompanySe__JobSe__1B29035F" FromRole="CompanySendOffer" ToRole="JobSeeker" />
+        </EntityType>
+        <EntityType Name="CV">
+          <Key>
+            <PropertyRef Name="JobSeekerID" />
+          </Key>
+          <Property Name="JobSeekerID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CV1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CVPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="LikeCount" Type="Int32" />
+          <NavigationProperty Name="JobSeeker" Relationship="Self.FK_CV_JobSeeker" FromRole="CV" ToRole="JobSeeker" />
+        </EntityType>
+        <EntityType Name="ImgCompany">
+          <Key>
+            <PropertyRef Name="companyID" />
+          </Key>
+          <Property Name="companyID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImgID1" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ImgID2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ImgID3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ImgID4" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ImgID5" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Company" Relationship="Self.FK__ImgCompan__compa__0E04126B" FromRole="ImgCompany" ToRole="Company" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="JobName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Position" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Salary" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="DatePublish" Type="DateTime" Precision="3" />
+          <Property Name="requirement" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="benefit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DateEnd" Type="DateTime" Precision="0" />
+          <Property Name="WorkingForm" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Like" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Applies" Relationship="Self.FK__Apply__JobID__498EEC8D" FromRole="Job" ToRole="Apply" />
+          <NavigationProperty Name="Company" Relationship="Self.FK__Job__CompanyID__7755B73D" FromRole="Job" ToRole="Company" />
+          <NavigationProperty Name="JobSkill" Relationship="Self.FK__JobSkill__jobID__67DE6983" FromRole="Job" ToRole="JobSkill" />
+          <NavigationProperty Name="JobSeekerLikeJob" Relationship="Self.JobSeekerLikeJob" FromRole="Job" ToRole="JobSeeker" />
+        </EntityType>
+        <EntityType Name="JobAlert">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="senderID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="recipientID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DateReply" Type="DateTime" Precision="3" />
+          <Property Name="jobID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Company" Relationship="Self.FK__JobAlert__sender__56B3DD81" FromRole="JobAlert" ToRole="Company" />
+          <NavigationProperty Name="JobSeeker" Relationship="Self.FK__JobAlert__recipi__57A801BA" FromRole="JobAlert" ToRole="JobSeeker" />
+        </EntityType>
+        <EntityType Name="JobOffer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="senderID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="recipientID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DateReply" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Company" Relationship="Self.FK__JobOffer__sender__15702A09" FromRole="JobOffer" ToRole="Company" />
+          <NavigationProperty Name="JobSeeker" Relationship="Self.FK__JobOffer__recipi__16644E42" FromRole="JobOffer" ToRole="JobSeeker" />
+        </EntityType>
+        <EntityType Name="JobPreference">
+          <Key>
+            <PropertyRef Name="JobSeekerID" />
+          </Key>
+          <Property Name="JobSeekerID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="WorkingForm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CompanySize" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Salary" Type="Int32" />
+          <Property Name="Deadline" Type="DateTime" Precision="3" />
+          <Property Name="Skill1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Skill2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Skill3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="JobSeeker" Relationship="Self.FK_JobPreference_JobSeeker" FromRole="JobPreference" ToRole="JobSeeker" />
+        </EntityType>
+        <EntityType Name="JobSeeker">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="NationalID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Account" Relationship="Self.FK_AccountJobSeeker" FromRole="JobSeeker" ToRole="Account" />
+          <NavigationProperty Name="Applies" Relationship="Self.FK__Apply__JobSeeker__489AC854" FromRole="JobSeeker" ToRole="Apply" />
+          <NavigationProperty Name="CompanySendOffers" Relationship="Self.FK__CompanySe__JobSe__1B29035F" FromRole="JobSeeker" ToRole="CompanySendOffer" />
+          <NavigationProperty Name="CV" Relationship="Self.FK_CV_JobSeeker" FromRole="JobSeeker" ToRole="CV" />
+          <NavigationProperty Name="JobAlerts" Relationship="Self.FK__JobAlert__recipi__57A801BA" FromRole="JobSeeker" ToRole="JobAlert" />
+          <NavigationProperty Name="JobOffers" Relationship="Self.FK__JobOffer__recipi__16644E42" FromRole="JobSeeker" ToRole="JobOffer" />
+          <NavigationProperty Name="JobPreference" Relationship="Self.FK_JobPreference_JobSeeker" FromRole="JobSeeker" ToRole="JobPreference" />
+          <NavigationProperty Name="Table" Relationship="Self.FK__Table__Jobseeker__2116E6DF" FromRole="JobSeeker" ToRole="Table" />
+          <NavigationProperty Name="CompanyLikeJobSeeker" Relationship="Self.CompanyLikeJobSeeker" FromRole="JobSeeker" ToRole="Company" />
+          <NavigationProperty Name="CompanyLikeJobSeekerCV" Relationship="Self.CompanyLikeJobSeekerCV" FromRole="JobSeeker" ToRole="Company" />
+          <NavigationProperty Name="JobSeekerLikeCompany" Relationship="Self.JobSeekerLikeCompany" FromRole="JobSeeker" ToRole="Company" />
+          <NavigationProperty Name="Jobs" Relationship="Self.JobSeekerLikeJob" FromRole="JobSeeker" ToRole="Job" />
+          <NavigationProperty Name="Ratings" Relationship="FindingJob2Model.FK_Rating_JobSeeker" FromRole="JobSeeker" ToRole="Rating" />
+        </EntityType>
+        <EntityType Name="JobSkill">
+          <Key>
+            <PropertyRef Name="jobID" />
+          </Key>
+          <Property Name="jobID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Skill1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Skill2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Skill3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Job" Relationship="Self.FK__JobSkill__jobID__67DE6983" FromRole="JobSkill" ToRole="Job" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="JobseekerID" />
+          </Key>
+          <Property Name="JobseekerID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CV" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CVPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Like" Type="Int32" />
+          <NavigationProperty Name="JobSeeker" Relationship="Self.FK__Table__Jobseeker__2116E6DF" FromRole="Table" ToRole="JobSeeker" />
+        </EntityType>
+        <EntityType Name="Interview">
+          <Key>
+            <PropertyRef Name="IdJSeeker" />
+            <PropertyRef Name="IdJob" />
+          </Key>
+          <Property Name="IdJSeeker" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdJob" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TimeInterview" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateInterview" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="companyID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Rating">
+          <Key>
+            <PropertyRef Name="JobSeekerID" />
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="JobSeekerID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TimeRate" Type="DateTime" Precision="3" />
+          <Property Name="content" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="rate" Type="Int32" />
+          <NavigationProperty Name="Company" Relationship="FindingJob2Model.FK_Rating_Company" FromRole="Rating" ToRole="Company" />
+          <NavigationProperty Name="JobSeeker" Relationship="FindingJob2Model.FK_Rating_JobSeeker" FromRole="Rating" ToRole="JobSeeker" />
+        </EntityType>
+        <Association Name="FK_AccountCompany">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Email" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="Email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AccountJobSeeker">
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Email" />
+            </Principal>
+            <Dependent Role="JobSeeker">
+              <PropertyRef Name="Email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Apply__JobID__498EEC8D">
+          <End Role="Job" Type="Self.Job" Multiplicity="1" />
+          <End Role="Apply" Type="Self.Apply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="Apply">
+              <PropertyRef Name="JobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Apply__JobSeeker__489AC854">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="Apply" Type="Self.Apply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Apply">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompanySe__Compa__1A34DF26">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="CompanySendOffer" Type="Self.CompanySendOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CompanySendOffer">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ImgCompan__compa__0E04126B">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="ImgCompany" Type="Self.ImgCompany" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ImgCompany">
+              <PropertyRef Name="companyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Job__CompanyID__7755B73D">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="Job" Type="Self.Job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Job">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JobAlert__sender__56B3DD81">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="JobAlert" Type="Self.JobAlert" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobAlert">
+              <PropertyRef Name="senderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JobOffer__sender__15702A09">
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+          <End Role="JobOffer" Type="Self.JobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobOffer">
+              <PropertyRef Name="senderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompanySe__JobSe__1B29035F">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="CompanySendOffer" Type="Self.CompanySendOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CompanySendOffer">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CV_JobSeeker">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CV" Type="Self.CV" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CV">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JobSkill__jobID__67DE6983">
+          <End Role="Job" Type="Self.Job" Multiplicity="1" />
+          <End Role="JobSkill" Type="Self.JobSkill" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="JobSkill">
+              <PropertyRef Name="jobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JobAlert__recipi__57A801BA">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="0..1" />
+          <End Role="JobAlert" Type="Self.JobAlert" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobAlert">
+              <PropertyRef Name="recipientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__JobOffer__recipi__16644E42">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="0..1" />
+          <End Role="JobOffer" Type="Self.JobOffer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobOffer">
+              <PropertyRef Name="recipientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobPreference_JobSeeker">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="JobPreference" Type="Self.JobPreference" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JobPreference">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Table__Jobseeker__2116E6DF">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="JobseekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CompanyLikeJobSeeker">
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="*" />
+        </Association>
+        <Association Name="CompanyLikeJobSeekerCV">
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="*" />
+        </Association>
+        <Association Name="JobSeekerLikeCompany">
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="*" />
+        </Association>
+        <Association Name="JobSeekerLikeJob">
+          <End Role="Job" Type="Self.Job" Multiplicity="*" />
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="FindingJob" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Applies" EntityType="Self.Apply" />
+          <EntitySet Name="Companies" EntityType="Self.Company" />
+          <EntitySet Name="CompanySendOffers" EntityType="Self.CompanySendOffer" />
+          <EntitySet Name="CVs" EntityType="Self.CV" />
+          <EntitySet Name="ImgCompanies" EntityType="Self.ImgCompany" />
+          <EntitySet Name="Jobs" EntityType="Self.Job" />
+          <EntitySet Name="JobAlerts" EntityType="Self.JobAlert" />
+          <EntitySet Name="JobOffers" EntityType="Self.JobOffer" />
+          <EntitySet Name="JobPreferences" EntityType="Self.JobPreference" />
+          <EntitySet Name="JobSeekers" EntityType="Self.JobSeeker" />
+          <EntitySet Name="JobSkills" EntityType="Self.JobSkill" />
+          <EntitySet Name="Tables" EntityType="Self.Table" />
+          <EntitySet Name="Interviews" EntityType="Self.Interview" />
+          <EntitySet Name="Ratings" EntityType="Self.Rating" />
+          <AssociationSet Name="FK_AccountCompany" Association="Self.FK_AccountCompany">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Company" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AccountJobSeeker" Association="Self.FK_AccountJobSeeker">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Apply__JobID__498EEC8D" Association="Self.FK__Apply__JobID__498EEC8D">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="Apply" EntitySet="Applies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Apply__JobSeeker__489AC854" Association="Self.FK__Apply__JobSeeker__489AC854">
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+            <End Role="Apply" EntitySet="Applies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompanySe__Compa__1A34DF26" Association="Self.FK__CompanySe__Compa__1A34DF26">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="CompanySendOffer" EntitySet="CompanySendOffers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ImgCompan__compa__0E04126B" Association="Self.FK__ImgCompan__compa__0E04126B">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="ImgCompany" EntitySet="ImgCompanies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Job__CompanyID__7755B73D" Association="Self.FK__Job__CompanyID__7755B73D">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="Job" EntitySet="Jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JobAlert__sender__56B3DD81" Association="Self.FK__JobAlert__sender__56B3DD81">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="JobAlert" EntitySet="JobAlerts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JobOffer__sender__15702A09" Association="Self.FK__JobOffer__sender__15702A09">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="JobOffer" EntitySet="JobOffers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompanySe__JobSe__1B29035F" Association="Self.FK__CompanySe__JobSe__1B29035F">
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+            <End Role="CompanySendOffer" EntitySet="CompanySendOffers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CV_JobSeeker" Association="Self.FK_CV_JobSeeker">
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+            <End Role="CV" EntitySet="CVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JobSkill__jobID__67DE6983" Association="Self.FK__JobSkill__jobID__67DE6983">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="JobSkill" EntitySet="JobSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JobAlert__recipi__57A801BA" Association="Self.FK__JobAlert__recipi__57A801BA">
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+            <End Role="JobAlert" EntitySet="JobAlerts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__JobOffer__recipi__16644E42" Association="Self.FK__JobOffer__recipi__16644E42">
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+            <End Role="JobOffer" EntitySet="JobOffers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobPreference_JobSeeker" Association="Self.FK_JobPreference_JobSeeker">
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+            <End Role="JobPreference" EntitySet="JobPreferences" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Table__Jobseeker__2116E6DF" Association="Self.FK__Table__Jobseeker__2116E6DF">
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+            <End Role="Table" EntitySet="Tables" />
+          </AssociationSet>
+          <AssociationSet Name="CompanyLikeJobSeeker" Association="Self.CompanyLikeJobSeeker">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+          </AssociationSet>
+          <AssociationSet Name="CompanyLikeJobSeekerCV" Association="Self.CompanyLikeJobSeekerCV">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+          </AssociationSet>
+          <AssociationSet Name="JobSeekerLikeCompany" Association="Self.JobSeekerLikeCompany">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+          </AssociationSet>
+          <AssociationSet Name="JobSeekerLikeJob" Association="Self.JobSeekerLikeJob">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+          </AssociationSet>
+          <FunctionImport Name="GetCompanyWithMostRecruitedCandidates" IsComposable="true" ReturnType="Collection(FindingJob2Model.GetCompanyWithMostRecruitedCandidates_Result)" />
+          <FunctionImport Name="InsertJobAndGetID">
+            <Parameter Name="CompanyID" Mode="In" Type="String" />
+            <Parameter Name="JobName" Mode="In" Type="String" />
+            <Parameter Name="Position" Mode="In" Type="String" />
+            <Parameter Name="Salary" Mode="In" Type="Decimal" />
+            <Parameter Name="requirement" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="benefit" Mode="In" Type="String" />
+            <Parameter Name="WorkingForm" Mode="In" Type="String" />
+            <Parameter Name="DateEnd" Mode="In" Type="DateTime" />
+            <Parameter Name="JobID" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <AssociationSet Name="FK_Rating_Company" Association="FindingJob2Model.FK_Rating_Company">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="Rating" EntitySet="Ratings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rating_JobSeeker" Association="FindingJob2Model.FK_Rating_JobSeeker">
+            <End Role="JobSeeker" EntitySet="JobSeekers" />
+            <End Role="Rating" EntitySet="Ratings" />
+          </AssociationSet>
+          <EntitySet Name="UpdatableJobViews" EntityType="FindingJob2Model.UpdatableJobView" />
+        </EntityContainer>
+        <Association Name="FK_Rating_Company">
+          <End Type="FindingJob2Model.Company" Role="Company" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="FindingJob2Model.Rating" Role="Rating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rating">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rating_JobSeeker">
+          <End Type="FindingJob2Model.JobSeeker" Role="JobSeeker" Multiplicity="1" />
+          <End Type="FindingJob2Model.Rating" Role="Rating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rating">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UpdatableJobView">
+          <Key>
+            <PropertyRef Name="JobID" />
+            <PropertyRef Name="Skill1" />
+          </Key>
+          <Property Name="JobID" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="JobName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Position" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Salary" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="DatePublish" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Skill1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Skill2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Skill3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FindingJob2ModelStoreContainer" CdmEntityContainer="FindingJob">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="FindingJob2Model.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applies">
+            <EntityTypeMapping TypeName="FindingJob2Model.Apply">
+              <MappingFragment StoreEntitySet="Apply">
+                <ScalarProperty Name="JobSeekerID" ColumnName="JobSeekerID" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="TimeApply" ColumnName="TimeApply" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="FindingJob2Model.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CompanyType" ColumnName="CompanyType" />
+                <ScalarProperty Name="CompanySize" ColumnName="CompanySize" />
+                <ScalarProperty Name="Phonenumber" ColumnName="Phonenumber" />
+                <ScalarProperty Name="WorkingTimeBegin" ColumnName="WorkingTimeBegin" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="WorkingTimeEnd" ColumnName="WorkingTimeEnd" />
+                <ScalarProperty Name="TaxIdentification" ColumnName="TaxIdentification" />
+                <ScalarProperty Name="BusinessLicense" ColumnName="BusinessLicense" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="WebsiteLink" ColumnName="WebsiteLink" />
+                <ScalarProperty Name="Like" ColumnName="Like" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanySendOffers">
+            <EntityTypeMapping TypeName="FindingJob2Model.CompanySendOffer">
+              <MappingFragment StoreEntitySet="CompanySendOffer">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="JobSeekerID" ColumnName="JobSeekerID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CVs">
+            <EntityTypeMapping TypeName="FindingJob2Model.CV">
+              <MappingFragment StoreEntitySet="CV">
+                <ScalarProperty Name="JobSeekerID" ColumnName="JobSeekerID" />
+                <ScalarProperty Name="CV1" ColumnName="CV" />
+                <ScalarProperty Name="CVPicture" ColumnName="CVPicture" />
+                <ScalarProperty Name="LikeCount" ColumnName="LikeCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImgCompanies">
+            <EntityTypeMapping TypeName="FindingJob2Model.ImgCompany">
+              <MappingFragment StoreEntitySet="ImgCompany">
+                <ScalarProperty Name="companyID" ColumnName="companyID" />
+                <ScalarProperty Name="ImgID1" ColumnName="ImgID1" />
+                <ScalarProperty Name="ImgID2" ColumnName="ImgID2" />
+                <ScalarProperty Name="ImgID3" ColumnName="ImgID3" />
+                <ScalarProperty Name="ImgID4" ColumnName="ImgID4" />
+                <ScalarProperty Name="ImgID5" ColumnName="ImgID5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="FindingJob2Model.Job">
+              <MappingFragment StoreEntitySet="Job">
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="JobName" ColumnName="JobName" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="DatePublish" ColumnName="DatePublish" />
+                <ScalarProperty Name="requirement" ColumnName="requirement" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="benefit" ColumnName="benefit" />
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="WorkingForm" ColumnName="WorkingForm" />
+                <ScalarProperty Name="Like" ColumnName="Like" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobAlerts">
+            <EntityTypeMapping TypeName="FindingJob2Model.JobAlert">
+              <MappingFragment StoreEntitySet="JobAlert">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="senderID" ColumnName="senderID" />
+                <ScalarProperty Name="recipientID" ColumnName="recipientID" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="DateReply" ColumnName="DateReply" />
+                <ScalarProperty Name="jobID" ColumnName="jobID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobOffers">
+            <EntityTypeMapping TypeName="FindingJob2Model.JobOffer">
+              <MappingFragment StoreEntitySet="JobOffer">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="senderID" ColumnName="senderID" />
+                <ScalarProperty Name="recipientID" ColumnName="recipientID" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="DateReply" ColumnName="DateReply" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobPreferences">
+            <EntityTypeMapping TypeName="FindingJob2Model.JobPreference">
+              <MappingFragment StoreEntitySet="JobPreference">
+                <ScalarProperty Name="JobSeekerID" ColumnName="JobSeekerID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="CompanyType" ColumnName="CompanyType" />
+                <ScalarProperty Name="WorkingForm" ColumnName="WorkingForm" />
+                <ScalarProperty Name="CompanySize" ColumnName="CompanySize" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+                <ScalarProperty Name="Skill1" ColumnName="Skill1" />
+                <ScalarProperty Name="Skill2" ColumnName="Skill2" />
+                <ScalarProperty Name="Skill3" ColumnName="Skill3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobSeekers">
+            <EntityTypeMapping TypeName="FindingJob2Model.JobSeeker">
+              <MappingFragment StoreEntitySet="JobSeeker">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobSkills">
+            <EntityTypeMapping TypeName="FindingJob2Model.JobSkill">
+              <MappingFragment StoreEntitySet="JobSkill">
+                <ScalarProperty Name="jobID" ColumnName="jobID" />
+                <ScalarProperty Name="Skill1" ColumnName="Skill1" />
+                <ScalarProperty Name="Skill2" ColumnName="Skill2" />
+                <ScalarProperty Name="Skill3" ColumnName="Skill3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="FindingJob2Model.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="JobseekerID" ColumnName="JobseekerID" />
+                <ScalarProperty Name="CV" ColumnName="CV" />
+                <ScalarProperty Name="CVPicture" ColumnName="CVPicture" />
+                <ScalarProperty Name="Like" ColumnName="Like" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Interviews">
+            <EntityTypeMapping TypeName="FindingJob2Model.Interview">
+              <MappingFragment StoreEntitySet="Interview">
+                <ScalarProperty Name="IdJSeeker" ColumnName="IdJSeeker" />
+                <ScalarProperty Name="IdJob" ColumnName="IdJob" />
+                <ScalarProperty Name="TimeInterview" ColumnName="TimeInterview" />
+                <ScalarProperty Name="DateInterview" ColumnName="DateInterview" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="companyID" ColumnName="companyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ratings">
+            <EntityTypeMapping TypeName="FindingJob2Model.Rating">
+              <MappingFragment StoreEntitySet="Rating">
+                <ScalarProperty Name="JobSeekerID" ColumnName="JobSeekerID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="TimeRate" ColumnName="TimeRate" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CompanyLikeJobSeeker" TypeName="FindingJob2Model.CompanyLikeJobSeeker" StoreEntitySet="CompanyLikeJobSeeker">
+            <EndProperty Name="Company">
+              <ScalarProperty Name="ID" ColumnName="CompanyID" />
+            </EndProperty>
+            <EndProperty Name="JobSeeker">
+              <ScalarProperty Name="ID" ColumnName="JobSeekerID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="CompanyLikeJobSeekerCV" TypeName="FindingJob2Model.CompanyLikeJobSeekerCV" StoreEntitySet="CompanyLikeJobSeekerCV">
+            <EndProperty Name="Company">
+              <ScalarProperty Name="ID" ColumnName="CompanyID" />
+            </EndProperty>
+            <EndProperty Name="JobSeeker">
+              <ScalarProperty Name="ID" ColumnName="JobSeekerID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="JobSeekerLikeCompany" TypeName="FindingJob2Model.JobSeekerLikeCompany" StoreEntitySet="JobSeekerLikeCompany">
+            <EndProperty Name="Company">
+              <ScalarProperty Name="ID" ColumnName="CompanyID" />
+            </EndProperty>
+            <EndProperty Name="JobSeeker">
+              <ScalarProperty Name="ID" ColumnName="JobSeekerID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="JobSeekerLikeJob" TypeName="FindingJob2Model.JobSeekerLikeJob" StoreEntitySet="JobSeekerLikeJob">
+            <EndProperty Name="Job">
+              <ScalarProperty Name="JobID" ColumnName="JobID" />
+            </EndProperty>
+            <EndProperty Name="JobSeeker">
+              <ScalarProperty Name="ID" ColumnName="JobSeekerID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionName="FindingJob2Model.Store.GetCompanyWithMostRecruitedCandidates" FunctionImportName="GetCompanyWithMostRecruitedCandidates">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FindingJob2Model.GetCompanyWithMostRecruitedCandidates_Result">
+                <ScalarProperty Name="CandidatesRecruited" ColumnName="CandidatesRecruited" />
+                <ScalarProperty Name="IDcompany" ColumnName="IDcompany" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertJobAndGetID" FunctionName="FindingJob2Model.Store.InsertJobAndGetID" />
+          <EntitySetMapping Name="UpdatableJobViews">
+            <EntityTypeMapping TypeName="FindingJob2Model.UpdatableJobView">
+              <MappingFragment StoreEntitySet="UpdatableJobView">
+                <ScalarProperty Name="Skill3" ColumnName="Skill3" />
+                <ScalarProperty Name="Skill2" ColumnName="Skill2" />
+                <ScalarProperty Name="Skill1" ColumnName="Skill1" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="DatePublish" ColumnName="DatePublish" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="JobName" ColumnName="JobName" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

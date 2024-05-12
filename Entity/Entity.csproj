@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9D6CD54-D6B7-4341-BAD3-CA6014D30466}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Entity</RootNamespace>
+    <AssemblyName>Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="ReaLTaiizor, Version=3.8.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReaLTaiizor.3.8.0.5\lib\net48\ReaLTaiizor.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=25.2462.3.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.25.2.3\lib\net462\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=25.2462.3.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.25.2.3\lib\net462\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=25.2462.3.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.WinForms.25.2.3\lib\net462\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.8.0.4\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.8.0.0\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Transitions, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\dot-net-transitions.1.2.1.0\lib\net40-full\Transitions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Apply.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanySendOffer.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CV.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CV.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\AlertDAO.cs" />
+    <Compile Include="DAO\ApplyDAO.cs" />
+    <Compile Include="DAO\SkillListDAO.cs" />
+    <Compile Include="DAO\CompanyAddtionalImageDAO.cs" />
+    <Compile Include="DAO\CompanyDAO.cs" />
+    <Compile Include="DAO\CompanyLikeCVDao.cs" />
+    <Compile Include="DAO\CompanySendOfferDAO.cs" />
+    <Compile Include="DAO\CVDao.cs" />
+    <Compile Include="DAO\Education.cs" />
+    <Compile Include="DAO\Experience.cs" />
+    <Compile Include="DAO\ImageHandler.cs" />
+    <Compile Include="DAO\InterviewDAO.cs" />
+    <Compile Include="DAO\JobDAO.cs" />
+    <Compile Include="DAO\JobOfferDAO.cs" />
+    <Compile Include="DAO\JobPreferenceDAO.cs" />
+    <Compile Include="DAO\JobSeekerDAO.cs" />
+    <Compile Include="DAO\PDFHandler.cs" />
+    <Compile Include="DAO\Project.cs" />
+    <Compile Include="DAO\RatingDAO.cs" />
+    <Compile Include="FCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCompany.Designer.cs">
+      <DependentUpon>FCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindingJob.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindingJob.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FindingJob.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FindingJob.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindingJob.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="FindingJob.Designer.cs">
+      <DependentUpon>FindingJob.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="FJobSeeker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FJobSeeker.Designer.cs">
+      <DependentUpon>FJobSeeker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetCompanyWithMostRecruitedCandidates_Result.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImgCompany.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interview.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Job.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobAlert.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobOffer.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobPreference.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobSeeker.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobSkill.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rating.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Table.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatableJobView.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FCompany.resx">
+      <DependentUpon>FCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FJobSeeker.resx">
+      <DependentUpon>FJobSeeker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="FindingJob.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FindingJob.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="FindingJob.edmx.diagram">
+      <DependentUpon>FindingJob.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FindingJob.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FindingJob.edmx</DependentUpon>
+      <LastGenOutput>FindingJob.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="FindingJob.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FindingJob.edmx</DependentUpon>
+      <LastGenOutput>FindingJob.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\skills.png" />
+    <None Include="Resources\RedHeart.png" />
+    <None Include="Resources\project.png" />
+    <None Include="Resources\portfolio.png" />
+    <None Include="Resources\noimg.jpg" />
+    <None Include="Resources\mortarboard.png" />
+    <None Include="Resources\Image1.png" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\icons8-test-account-32.png" />
+    <None Include="Resources\icons8-test-account-32 %281%29.png" />
+    <None Include="Resources\icons8-send-job-list-48.png" />
+    <None Include="Resources\icons8-send-job-list-48 %281%29.png" />
+    <None Include="Resources\icons8-log-out-50 %282%29.png" />
+    <None Include="Resources\icons8-log-out-50 %281%29.png" />
+    <None Include="Resources\icons8-job-seeker-50.png" />
+    <None Include="Resources\icons8-job-seeker-50 %281%29.png" />
+    <None Include="Resources\icons8-job-alert-66.png" />
+    <None Include="Resources\icons8-job-alert-66 %281%29.png" />
+    <None Include="Resources\icons8-history-50.png" />
+    <None Include="Resources\icons8-history-50 %281%29.png" />
+    <None Include="Resources\icons8-heart-100.png" />
+    <None Include="Resources\icons8-heart-96.png" />
+    <None Include="Resources\icons8-company-50.png" />
+    <None Include="Resources\icons8-company-50 %281%29.png" />
+    <None Include="Resources\DarkHeart.png" />
+    <None Include="Resources\coding.png" />
+    <None Include="Resources\avatar.png" />
+    <None Include="Resources\434069927_1118623746146151_8820399568004975249_n.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

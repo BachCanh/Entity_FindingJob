@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f204186100294644a0fd784ca8ac8c82" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="FindingJob2Model.Account" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.Apply" Width="1.5" PointX="7.5" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.Company" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.CompanySendOffer" Width="1.875" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.CV" Width="1.5" PointX="9.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.ImgCompany" Width="1.5" PointX="5.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.Job" Width="1.5" PointX="5.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.JobAlert" Width="1.5" PointX="9.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.JobOffer" Width="1.5" PointX="12.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.JobPreference" Width="1.5" PointX="9.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.JobSeeker" Width="1.5" PointX="7.5" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.JobSkill" Width="1.5" PointX="7.5" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.Table" Width="1.5" PointX="9.75" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.Interview" Width="1.5" PointX="13.375" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.Rating" Width="1.5" PointX="12.125" PointY="11.625" IsExpanded="true" />
+        <AssociationConnector Association="FindingJob2Model.FK_AccountCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK_AccountJobSeeker" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK__Apply__JobID__498EEC8D" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK__Apply__JobSeeker__489AC854" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK__CompanySe__Compa__1A34DF26" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK__ImgCompan__compa__0E04126B" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK__Job__CompanyID__7755B73D" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK__JobAlert__sender__56B3DD81" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK__JobOffer__sender__15702A09" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK__CompanySe__JobSe__1B29035F" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK_CV_JobSeeker" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK__JobSkill__jobID__67DE6983" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK__JobAlert__recipi__57A801BA" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK__JobOffer__recipi__16644E42" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK_JobPreference_JobSeeker" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK__Table__Jobseeker__2116E6DF" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.CompanyLikeJobSeeker" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.CompanyLikeJobSeekerCV" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.JobSeekerLikeCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.JobSeekerLikeJob" ManuallyRouted="false" />
+        <AssociationConnector Association="FindingJob2Model.FK_Rating_Company" />
+        <AssociationConnector Association="FindingJob2Model.FK_Rating_JobSeeker" />
+        <EntityTypeShape EntityType="FindingJob2Model.UpdatableJobView" Width="1.5" PointX="16.5" PointY="9" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
