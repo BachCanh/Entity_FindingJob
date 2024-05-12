@@ -106,8 +106,8 @@ namespace Entity
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //FJobEdit fJobEdit = new FJobEdit(job, job.CompanyID);
-            //fJobEdit.Show();
+            FJobEdit fJobEdit = new FJobEdit(job, job.CompanyID);
+            fJobEdit.Show();
         }
 
         private void pnWrap_Paint(object sender, PaintEventArgs e)

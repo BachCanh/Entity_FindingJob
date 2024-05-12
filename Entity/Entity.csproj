@@ -184,6 +184,12 @@
     <Compile Include="FJobCreation.Designer.cs">
       <DependentUpon>FJobCreation.cs</DependentUpon>
     </Compile>
+    <Compile Include="FJobEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FJobEdit.Designer.cs">
+      <DependentUpon>FJobEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FJobSeeker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FJobCreation.resx">
       <DependentUpon>FJobCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FJobEdit.resx">
+      <DependentUpon>FJobEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FJobSeeker.resx">
       <DependentUpon>FJobSeeker.cs</DependentUpon>
