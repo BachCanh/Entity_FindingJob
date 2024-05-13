@@ -14,6 +14,29 @@ namespace Entity
     
     public partial class JobOffer
     {
+        public JobOffer()
+        {
+
+        }
+        public JobOffer(string companyid, string jobseekerid, string subject, string content)
+        {
+            this.recipientID = jobseekerid;
+            this.senderID = companyid;
+            this.Subject = subject;
+            this.content = content;
+            this.DateReply = DateTime.Now;
+
+        }
+        public JobOffer(string id, string companyid, string jobseekerid, string subject, string content, string status)
+        {
+            this.id = id;
+            this.recipientID = jobseekerid;
+            this.senderID = companyid;
+            this.Subject = subject;
+            this.content = content;
+            this.DateReply = DateTime.Now;
+
+        }
         public string id { get; set; }
         public string senderID { get; set; }
         public string recipientID { get; set; }

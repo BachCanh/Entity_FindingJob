@@ -149,6 +149,18 @@
     <Compile Include="DAO\PDFHandler.cs" />
     <Compile Include="DAO\Project.cs" />
     <Compile Include="DAO\RatingDAO.cs" />
+    <Compile Include="FAnswer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAnswer.Designer.cs">
+      <DependentUpon>FAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FApplicant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FApplicant.Designer.cs">
+      <DependentUpon>FApplicant.cs</DependentUpon>
+    </Compile>
     <Compile Include="FCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,11 +247,23 @@
     <Compile Include="FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FOffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FOffer.Designer.cs">
+      <DependentUpon>FOffer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FPostJob.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FPostJob.Designer.cs">
       <DependentUpon>FPostJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FScheduleInterview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FScheduleInterview.Designer.cs">
+      <DependentUpon>FScheduleInterview.cs</DependentUpon>
     </Compile>
     <Compile Include="FViewInterview.cs">
       <SubType>Form</SubType>
@@ -282,6 +306,12 @@
     <Compile Include="Table.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
+    <Compile Include="UCApplicant.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCApplicant.Designer.cs">
+      <DependentUpon>UCApplicant.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCCandidate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -309,6 +339,12 @@
     <Compile Include="UpdatableJobView.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FAnswer.resx">
+      <DependentUpon>FAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FApplicant.resx">
+      <DependentUpon>FApplicant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FCompany.resx">
       <DependentUpon>FCompany.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,8 +378,14 @@
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FOffer.resx">
+      <DependentUpon>FOffer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FPostJob.resx">
       <DependentUpon>FPostJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FScheduleInterview.resx">
+      <DependentUpon>FScheduleInterview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FViewInterview.resx">
       <DependentUpon>FViewInterview.cs</DependentUpon>
@@ -358,6 +400,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCApplicant.resx">
+      <DependentUpon>UCApplicant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCCandidate.resx">
       <DependentUpon>UCCandidate.cs</DependentUpon>
     </EmbeddedResource>

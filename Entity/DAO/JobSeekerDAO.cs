@@ -24,7 +24,13 @@ namespace Entity
                                .Select(c => c.Name).FirstOrDefault();
             return name;
         }
-
+        public string FetchJSEmail(string id)
+        {
+            string email = string.Empty;
+            email = db.JobSeekers.Where(c => c.ID == id)
+                               .Select(c => c.Email).FirstOrDefault();
+            return email;
+        }
         public DateTime FetchBdate(string id)
         {
             DateTime dateOfBirth;

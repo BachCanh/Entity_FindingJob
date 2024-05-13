@@ -30,8 +30,8 @@ namespace Entity
 
         private void btnApplicants_Click(object sender, EventArgs e)
         {
-            //FApplicant fApplicant = new FApplicant(job);
-            //fApplicant.Show();
+            FApplicant fApplicant = new FApplicant(job);
+            fApplicant.Show();
         }
 
         private void UCJob_Load(object sender, EventArgs e)

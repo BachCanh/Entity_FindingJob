@@ -30,297 +30,287 @@ namespace Entity
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            lblJSeeker = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            panel3 = new Panel();
-            panel2 = new Panel();
-            panel7 = new Panel();
-            lblJob = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            panel4 = new Panel();
-            lblTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            panel5 = new Panel();
-            lblTimeAdd = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            panel6 = new Panel();
-            guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            panel8 = new Panel();
-            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            flpBody = new FlowLayoutPanel();
-            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
-            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
-            mcpSchdule = new MonthCalendar();
-            panel3.SuspendLayout();
-            panel2.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
-            panel6.SuspendLayout();
-            guna2Panel4.SuspendLayout();
-            panel8.SuspendLayout();
-            guna2Panel3.SuspendLayout();
-            flpBody.SuspendLayout();
-            guna2Panel1.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblJSeeker = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblJob = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblTimeAdd = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.flpBody = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.mcpSchdule = new System.Windows.Forms.MonthCalendar();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.guna2Panel4.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
+            this.flpBody.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // guna2HtmlLabel1
             // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel1.Location = new Point(461, 16);
-            guna2HtmlLabel1.Margin = new Padding(4, 3, 4, 3);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(143, 47);
-            guna2HtmlLabel1.TabIndex = 14;
-            guna2HtmlLabel1.Text = "Interview";
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 25F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(527, 17);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(179, 59);
+            this.guna2HtmlLabel1.TabIndex = 14;
+            this.guna2HtmlLabel1.Text = "Interview";
             // 
             // lblJSeeker
             // 
-            lblJSeeker.AutoSize = false;
-            lblJSeeker.BackColor = Color.Transparent;
-            lblJSeeker.Dock = DockStyle.Fill;
-            lblJSeeker.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblJSeeker.Location = new Point(0, 0);
-            lblJSeeker.Name = "lblJSeeker";
-            lblJSeeker.Size = new Size(247, 34);
-            lblJSeeker.TabIndex = 0;
-            lblJSeeker.Text = "Name Jobseeker";
-            lblJSeeker.TextAlignment = ContentAlignment.MiddleLeft;
+            this.lblJSeeker.AutoSize = false;
+            this.lblJSeeker.BackColor = System.Drawing.Color.Transparent;
+            this.lblJSeeker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblJSeeker.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblJSeeker.Location = new System.Drawing.Point(0, 0);
+            this.lblJSeeker.Name = "lblJSeeker";
+            this.lblJSeeker.Size = new System.Drawing.Size(282, 36);
+            this.lblJSeeker.TabIndex = 0;
+            this.lblJSeeker.Text = "Name Jobseeker";
+            this.lblJSeeker.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2HtmlLabel2
             // 
-            guna2HtmlLabel2.AutoSize = false;
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Dock = DockStyle.Fill;
-            guna2HtmlLabel2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel2.Location = new Point(29, 0);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(101, 34);
-            guna2HtmlLabel2.TabIndex = 2;
-            guna2HtmlLabel2.Text = "Avatar";
-            guna2HtmlLabel2.TextAlignment = ContentAlignment.MiddleLeft;
+            this.guna2HtmlLabel2.AutoSize = false;
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(33, 0);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(116, 36);
+            this.guna2HtmlLabel2.TabIndex = 2;
+            this.guna2HtmlLabel2.Text = "Avatar";
+            this.guna2HtmlLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
-            panel3.Controls.Add(lblJSeeker);
-            panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(130, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(247, 34);
-            panel3.TabIndex = 2;
+            this.panel3.Controls.Add(this.lblJSeeker);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(149, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(282, 36);
+            this.panel3.TabIndex = 2;
             // 
             // panel2
             // 
-            panel2.Controls.Add(guna2HtmlLabel2);
-            panel2.Controls.Add(panel3);
-            panel2.Controls.Add(panel7);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(377, 34);
-            panel2.TabIndex = 2;
+            this.panel2.Controls.Add(this.guna2HtmlLabel2);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(431, 36);
+            this.panel2.TabIndex = 2;
             // 
             // panel7
             // 
-            panel7.Dock = DockStyle.Left;
-            panel7.Location = new Point(0, 0);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(29, 34);
-            panel7.TabIndex = 1;
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(33, 36);
+            this.panel7.TabIndex = 1;
             // 
             // lblJob
             // 
-            lblJob.AutoSize = false;
-            lblJob.BackColor = Color.Transparent;
-            lblJob.Dock = DockStyle.Fill;
-            lblJob.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblJob.Location = new Point(0, 0);
-            lblJob.Name = "lblJob";
-            lblJob.Size = new Size(318, 34);
-            lblJob.TabIndex = 0;
-            lblJob.Text = "Name Job";
-            lblJob.TextAlignment = ContentAlignment.MiddleLeft;
+            this.lblJob.AutoSize = false;
+            this.lblJob.BackColor = System.Drawing.Color.Transparent;
+            this.lblJob.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblJob.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblJob.Location = new System.Drawing.Point(0, 0);
+            this.lblJob.Name = "lblJob";
+            this.lblJob.Size = new System.Drawing.Size(363, 36);
+            this.lblJob.TabIndex = 0;
+            this.lblJob.Text = "Name Job";
+            this.lblJob.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel4
             // 
-            panel4.Controls.Add(lblJob);
-            panel4.Dock = DockStyle.Left;
-            panel4.Location = new Point(377, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(318, 34);
-            panel4.TabIndex = 4;
+            this.panel4.Controls.Add(this.lblJob);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(431, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(363, 36);
+            this.panel4.TabIndex = 4;
             // 
             // lblTime
             // 
-            lblTime.AutoSize = false;
-            lblTime.BackColor = Color.Transparent;
-            lblTime.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTime.Location = new Point(0, 0);
-            lblTime.Name = "lblTime";
-            lblTime.Size = new Size(129, 34);
-            lblTime.TabIndex = 0;
-            lblTime.Text = "Interview";
-            lblTime.TextAlignment = ContentAlignment.MiddleLeft;
+            this.lblTime.AutoSize = false;
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblTime.Location = new System.Drawing.Point(0, 0);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(147, 36);
+            this.lblTime.TabIndex = 0;
+            this.lblTime.Text = "Interview";
+            this.lblTime.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel5
             // 
-            panel5.Controls.Add(lblTime);
-            panel5.Dock = DockStyle.Left;
-            panel5.Location = new Point(810, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(120, 34);
-            panel5.TabIndex = 5;
+            this.panel5.Controls.Add(this.lblTime);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(925, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(137, 36);
+            this.panel5.TabIndex = 5;
             // 
             // lblTimeAdd
             // 
-            lblTimeAdd.AutoSize = false;
-            lblTimeAdd.BackColor = Color.Transparent;
-            lblTimeAdd.Dock = DockStyle.Fill;
-            lblTimeAdd.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTimeAdd.Location = new Point(0, 0);
-            lblTimeAdd.Name = "lblTimeAdd";
-            lblTimeAdd.Size = new Size(115, 34);
-            lblTimeAdd.TabIndex = 0;
-            lblTimeAdd.Text = "Date Add";
-            lblTimeAdd.TextAlignment = ContentAlignment.MiddleLeft;
+            this.lblTimeAdd.AutoSize = false;
+            this.lblTimeAdd.BackColor = System.Drawing.Color.Transparent;
+            this.lblTimeAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTimeAdd.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblTimeAdd.Location = new System.Drawing.Point(0, 0);
+            this.lblTimeAdd.Name = "lblTimeAdd";
+            this.lblTimeAdd.Size = new System.Drawing.Size(131, 36);
+            this.lblTimeAdd.TabIndex = 0;
+            this.lblTimeAdd.Text = "Date Add";
+            this.lblTimeAdd.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel6
             // 
-            panel6.Controls.Add(lblTimeAdd);
-            panel6.Dock = DockStyle.Left;
-            panel6.Location = new Point(695, 0);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(115, 34);
-            panel6.TabIndex = 6;
+            this.panel6.Controls.Add(this.lblTimeAdd);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(794, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(131, 36);
+            this.panel6.TabIndex = 6;
             // 
             // guna2Panel4
             // 
-            guna2Panel4.BackColor = Color.Transparent;
-            guna2Panel4.BorderColor = Color.Black;
-            guna2Panel4.BorderThickness = 1;
-            guna2Panel4.Controls.Add(panel8);
-            guna2Panel4.Controls.Add(panel5);
-            guna2Panel4.Controls.Add(panel6);
-            guna2Panel4.Controls.Add(panel4);
-            guna2Panel4.Controls.Add(panel2);
-            guna2Panel4.CustomizableEdges = customizableEdges1;
-            guna2Panel4.Dock = DockStyle.Top;
-            guna2Panel4.FillColor = Color.FromArgb(248, 212, 187);
-            guna2Panel4.Location = new Point(0, 0);
-            guna2Panel4.Margin = new Padding(0);
-            guna2Panel4.Name = "guna2Panel4";
-            guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel4.ShadowDecoration.Depth = 15;
-            guna2Panel4.Size = new Size(1036, 34);
-            guna2Panel4.TabIndex = 1;
+            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel4.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel4.BorderThickness = 1;
+            this.guna2Panel4.Controls.Add(this.panel8);
+            this.guna2Panel4.Controls.Add(this.panel5);
+            this.guna2Panel4.Controls.Add(this.panel6);
+            this.guna2Panel4.Controls.Add(this.panel4);
+            this.guna2Panel4.Controls.Add(this.panel2);
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(187)))));
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.ShadowDecoration.Depth = 15;
+            this.guna2Panel4.Size = new System.Drawing.Size(1184, 36);
+            this.guna2Panel4.TabIndex = 1;
             // 
             // panel8
             // 
-            panel8.Controls.Add(guna2HtmlLabel3);
-            panel8.Dock = DockStyle.Left;
-            panel8.Location = new Point(930, 0);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(106, 34);
-            panel8.TabIndex = 7;
+            this.panel8.Controls.Add(this.guna2HtmlLabel3);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(1062, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(121, 36);
+            this.panel8.TabIndex = 7;
             // 
             // guna2HtmlLabel3
             // 
-            guna2HtmlLabel3.AutoSize = false;
-            guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel3.Location = new Point(0, 0);
-            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(129, 34);
-            guna2HtmlLabel3.TabIndex = 0;
-            guna2HtmlLabel3.Text = "Status";
-            guna2HtmlLabel3.TextAlignment = ContentAlignment.MiddleLeft;
+            this.guna2HtmlLabel3.AutoSize = false;
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(0, 0);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(147, 36);
+            this.guna2HtmlLabel3.TabIndex = 0;
+            this.guna2HtmlLabel3.Text = "Status";
+            this.guna2HtmlLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Panel3
             // 
-            guna2Panel3.AutoScroll = true;
-            guna2Panel3.Controls.Add(flpBody);
-            guna2Panel3.CustomizableEdges = customizableEdges3;
-            guna2Panel3.Dock = DockStyle.Fill;
-            guna2Panel3.Location = new Point(0, 0);
-            guna2Panel3.Name = "guna2Panel3";
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel3.Size = new Size(1095, 417);
-            guna2Panel3.TabIndex = 1;
+            this.guna2Panel3.AutoScroll = true;
+            this.guna2Panel3.Controls.Add(this.flpBody);
+            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(1251, 445);
+            this.guna2Panel3.TabIndex = 1;
             // 
             // flpBody
             // 
-            flpBody.BackColor = Color.Transparent;
-            flpBody.Controls.Add(guna2Panel4);
-            flpBody.Location = new Point(35, 31);
-            flpBody.Name = "flpBody";
-            flpBody.Size = new Size(1036, 47);
-            flpBody.TabIndex = 3;
+            this.flpBody.BackColor = System.Drawing.Color.Transparent;
+            this.flpBody.Controls.Add(this.guna2Panel4);
+            this.flpBody.Location = new System.Drawing.Point(40, 33);
+            this.flpBody.Name = "flpBody";
+            this.flpBody.Size = new System.Drawing.Size(1184, 50);
+            this.flpBody.TabIndex = 3;
             // 
             // guna2Panel1
             // 
-            guna2Panel1.BackColor = Color.Transparent;
-            guna2Panel1.Controls.Add(guna2Panel3);
-            guna2Panel1.CustomizableEdges = customizableEdges5;
-            guna2Panel1.Dock = DockStyle.Bottom;
-            guna2Panel1.FillColor = Color.MistyRose;
-            guna2Panel1.Location = new Point(0, 257);
-            guna2Panel1.Margin = new Padding(4, 3, 4, 3);
-            guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Panel1.ShadowDecoration.Depth = 10;
-            guna2Panel1.ShadowDecoration.Enabled = true;
-            guna2Panel1.Size = new Size(1095, 417);
-            guna2Panel1.TabIndex = 13;
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.Controls.Add(this.guna2Panel3);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel1.FillColor = System.Drawing.Color.MistyRose;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 274);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.Depth = 10;
+            this.guna2Panel1.ShadowDecoration.Enabled = true;
+            this.guna2Panel1.Size = new System.Drawing.Size(1251, 445);
+            this.guna2Panel1.TabIndex = 13;
             // 
             // guna2Elipse1
             // 
-            guna2Elipse1.BorderRadius = 30;
+            this.guna2Elipse1.BorderRadius = 30;
             // 
             // guna2ShadowForm1
             // 
-            guna2ShadowForm1.BorderRadius = 30;
+            this.guna2ShadowForm1.BorderRadius = 30;
             // 
             // mcpSchdule
             // 
-            mcpSchdule.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            mcpSchdule.Location = new Point(415, 70);
-            mcpSchdule.MaxSelectionCount = 1;
-            mcpSchdule.Name = "mcpSchdule";
-            mcpSchdule.TabIndex = 11;
-            mcpSchdule.DateChanged += mcpSchdule_DateChanged;
+            this.mcpSchdule.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.mcpSchdule.Location = new System.Drawing.Point(474, 75);
+            this.mcpSchdule.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.mcpSchdule.MaxSelectionCount = 1;
+            this.mcpSchdule.Name = "mcpSchdule";
+            this.mcpSchdule.TabIndex = 11;
+            this.mcpSchdule.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mcpSchdule_DateChanged);
+            this.mcpSchdule.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.mcpSchdule_DateChanged);
             // 
             // FViewInterview
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1095, 674);
-            Controls.Add(guna2HtmlLabel1);
-            Controls.Add(guna2Panel1);
-            Controls.Add(mcpSchdule);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "FViewInterview";
-            Text = "FViewInterview";
-            Load += FViewInterview_Load;
-            panel3.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            panel6.ResumeLayout(false);
-            guna2Panel4.ResumeLayout(false);
-            panel8.ResumeLayout(false);
-            guna2Panel3.ResumeLayout(false);
-            flpBody.ResumeLayout(false);
-            guna2Panel1.ResumeLayout(false);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1251, 719);
+            this.Controls.Add(this.guna2HtmlLabel1);
+            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.mcpSchdule);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FViewInterview";
+            this.Text = "FViewInterview";
+            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.guna2Panel4.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.guna2Panel3.ResumeLayout(false);
+            this.flpBody.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

@@ -71,6 +71,7 @@ namespace Entity
             this.status = status;
             this.WorkingForm = workingform;
         }
+
         public string JobID { get; set; }
         public string CompanyID { get; set; }
         public string JobName { get; set; }

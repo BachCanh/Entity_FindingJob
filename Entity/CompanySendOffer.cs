@@ -14,6 +14,11 @@ namespace Entity
     
     public partial class CompanySendOffer
     {
+        public CompanySendOffer(string companyid, string jobseekerid)
+        {
+            this.CompanyID = companyid;
+            this.JobSeekerID = jobseekerid;
+        }
         public string CompanyID { get; set; }
         public string JobSeekerID { get; set; }
         public string Status { get; set; }

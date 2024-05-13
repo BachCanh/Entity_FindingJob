@@ -25,7 +25,7 @@ namespace Entity
             InitializeComponent();
             this.account = account;
             GetAllButtons(panel2);
-            company = com.FetchCompanyInformationBasedEmail(account.Email);
+            this.company = com.FetchCompanyInformationBasedEmail(account.Email);
             SetStatusJobs();
         }
 

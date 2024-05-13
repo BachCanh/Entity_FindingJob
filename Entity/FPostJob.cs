@@ -72,7 +72,7 @@ namespace Entity
         private void SearchNameJS(string search)
         {
             JobSeekerDAO jsDAO = new JobSeekerDAO();
-            //jobs = jobs.Where(job => job.Name.ToLower().Contains(search)).ToList();
+            jobs = jobs.Where(job => job.JobName.Trim().ToLower().Contains(search)).ToList();
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -92,11 +92,6 @@ namespace Entity
         private void btnFilter_Click(object sender, EventArgs e)
         {
             fFilter.Show();
-        }
-
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            PostJob_Load(sender, e);
         }
     }
 }

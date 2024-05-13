@@ -15,7 +15,7 @@ namespace Entity
 
         public void InsertInterview(Interview interview)
         {
-            if (FetchInterview(interview.IdJSeeker, interview.companyID, interview.IdJob).Status.ToLower() == "waiting")
+            if (FetchInterview(interview.IdJSeeker, interview.companyID, interview.IdJob).Status.Trim().ToLower() == "waiting")
             {
                 MessageBox.Show("There are a interview have already schedule with this jobseeker!!");
                 return;

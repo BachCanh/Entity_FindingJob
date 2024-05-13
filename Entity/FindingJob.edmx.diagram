@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f204186100294644a0fd784ca8ac8c82" Name="Diagram1" ZoomLevel="53">
+      <Diagram DiagramId="f204186100294644a0fd784ca8ac8c82" Name="Diagram1" ZoomLevel="79">
         <EntityTypeShape EntityType="FindingJob2Model.Account" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="FindingJob2Model.Apply" Width="1.5" PointX="7.5" PointY="19.125" IsExpanded="true" />
         <EntityTypeShape EntityType="FindingJob2Model.Company" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />

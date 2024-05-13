@@ -81,9 +81,9 @@ namespace Entity
 
         private void btnOffer_Click(object sender, EventArgs e)
         {
-            //FOffer fOffter = new FOffer(companyid, jobPreference);
-            //fOffter.SendClick += SendClick_Handle; 
-            //fOffter.Show();
+            FOffer fOffter = new FOffer(companyid, jobPreference);
+            fOffter.SendClick += SendClick_Handle; 
+            fOffter.Show();
         }
         private void SendClick_Handle(object sender, EventArgs e)
         {

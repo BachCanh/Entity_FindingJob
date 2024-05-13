@@ -12,7 +12,7 @@ namespace Entity
 {
     public partial class UCInterview : UserControl
     {
-        Interview interview = new Interview();
+        Interview interview;
         public UCInterview(Interview interview)
         {
             InitializeComponent();
