@@ -25,7 +25,7 @@ namespace Entity
             this.Subject = subject;
             this.content = content;
             this.DateReply = DateTime.Now;
-
+            this.Status = "Offering";
         }
         public JobOffer(string id, string companyid, string jobseekerid, string subject, string content, string status)
         {
@@ -35,7 +35,7 @@ namespace Entity
             this.Subject = subject;
             this.content = content;
             this.DateReply = DateTime.Now;
-
+            this.Status = status;
         }
         public string id { get; set; }
         public string senderID { get; set; }

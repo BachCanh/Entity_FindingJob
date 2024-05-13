@@ -26,6 +26,7 @@ namespace Entity
             this.DateInterview = dateInterview;
             this.Status = "waiting";
             this.companyID = companyID;
+            this.DateOffer = DateTime.Now;
         }
         public Interview(string idJSeeker, string idJob, string timeInterview, string status, DateTime dateInterview, string companyID)
         {
@@ -35,6 +36,7 @@ namespace Entity
             this.DateInterview = dateInterview;
             this.Status = status;
             this.companyID = companyID;
+            this.DateOffer = DateTime.Now;
         }
 
         public string IdJSeeker { get; set; }
