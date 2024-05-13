@@ -123,8 +123,8 @@ namespace Entity
         }
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            //company = new Company(informationDAO.FetchCommon(account));
-            //OpenChildForm(new FProfileCompany(company));
+            company = com.FetchCompanyInformationBasedEmail(account.Email);
+            OpenChildForm(new FProfileCompany(company));
         }
 
         private void btnHistory_Click(object sender, EventArgs e)

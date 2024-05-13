@@ -26,7 +26,26 @@ namespace Entity
             this.JobSeekerLikeCompany = new HashSet<JobSeeker>();
             this.Ratings = new HashSet<Rating>();
         }
-    
+        public Company(string iD, string name, string email, string address, string companyType, string companySize, string phonenumber, string workingTimeBegin, byte[] avatar, string workingTimeEnd, string taxIdentification, byte[] businessLicense, string detail, string websiteLink)
+        {
+            ID = iD;
+            Name = name;
+            Email = email;
+            Address = address;
+            CompanyType = companyType;
+            CompanySize = companySize;
+            Phonenumber = phonenumber;
+            WorkingTimeBegin = workingTimeBegin;
+            Avatar = avatar;
+            WorkingTimeEnd = workingTimeEnd;
+            TaxIdentification = taxIdentification;
+            BusinessLicense = businessLicense;
+            Detail = detail;
+            WebsiteLink = websiteLink;
+            this.Avatar = avatar;
+            this.BusinessLicense = businessLicense;
+        }
+
         public string ID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }

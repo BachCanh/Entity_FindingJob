@@ -209,7 +209,7 @@ namespace Entity
             this.btnSetting.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.btnSetting.HoverState.Font = new System.Drawing.Font("Cooper Black", 16.2F);
             this.btnSetting.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnSetting.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnSetting.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
             this.btnSetting.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSetting.ImageSize = new System.Drawing.Size(50, 50);
@@ -222,6 +222,7 @@ namespace Entity
             this.btnSetting.TabIndex = 2;
             this.btnSetting.Text = "Profile";
             this.btnSetting.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnHistory
             // 

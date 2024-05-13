@@ -259,6 +259,12 @@
     <Compile Include="FPostJob.Designer.cs">
       <DependentUpon>FPostJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="FProfileCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FProfileCompany.Designer.cs">
+      <DependentUpon>FProfileCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="FScheduleInterview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,6 +323,12 @@
     </Compile>
     <Compile Include="UCCandidate.Designer.cs">
       <DependentUpon>UCCandidate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCarousel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCarousel.Designer.cs">
+      <DependentUpon>UCCarousel.cs</DependentUpon>
     </Compile>
     <Compile Include="UCHistory.cs">
       <SubType>UserControl</SubType>
@@ -384,6 +396,9 @@
     <EmbeddedResource Include="FPostJob.resx">
       <DependentUpon>FPostJob.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FProfileCompany.resx">
+      <DependentUpon>FProfileCompany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FScheduleInterview.resx">
       <DependentUpon>FScheduleInterview.cs</DependentUpon>
     </EmbeddedResource>
@@ -405,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCCandidate.resx">
       <DependentUpon>UCCandidate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCarousel.resx">
+      <DependentUpon>UCCarousel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCHistory.resx">
       <DependentUpon>UCHistory.cs</DependentUpon>
