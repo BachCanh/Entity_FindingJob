@@ -36,7 +36,7 @@ namespace Entity
             {
                 if(job.DateEnd < DateTime.Now)
                 {
-                    //jDAO.DoneJob(job.Jobid);
+                    jDAO.DoneJob(job.JobID);
                 }
             }
         }
@@ -129,12 +129,14 @@ namespace Entity
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new FHistory(company.Jobs, company.INFO.ID));
+            company = com.FetchCompanyInformationBasedEmail(account.Email);
+            List<Job> jobs = company.Jobs.ToList();
+            OpenChildForm(new FHistory(jobs, company.ID));
         }
 
         private void btnInterviewView_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new FViewInterview(company));
+            OpenChildForm(new FViewInterview(company));
         }
         private void btnApplicant_Click(object sender, EventArgs e)
         {

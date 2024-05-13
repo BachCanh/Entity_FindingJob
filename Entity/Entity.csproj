@@ -158,6 +158,12 @@
     <Compile Include="FFilter.Designer.cs">
       <DependentUpon>FFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="FHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHistory.Designer.cs">
+      <DependentUpon>FHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FindingJob.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -214,6 +220,12 @@
     <Compile Include="FPostJob.Designer.cs">
       <DependentUpon>FPostJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="FViewInterview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FViewInterview.Designer.cs">
+      <DependentUpon>FViewInterview.cs</DependentUpon>
+    </Compile>
     <Compile Include="GetCompanyWithMostRecruitedCandidates_Result.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
@@ -249,6 +261,18 @@
     <Compile Include="Table.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
+    <Compile Include="UCHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCHistory.Designer.cs">
+      <DependentUpon>UCHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCInterview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCInterview.Designer.cs">
+      <DependentUpon>UCInterview.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCJob.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -263,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FFilter.resx">
       <DependentUpon>FFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FHistory.resx">
+      <DependentUpon>FHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FJobCreation.resx">
       <DependentUpon>FJobCreation.cs</DependentUpon>
@@ -282,6 +309,9 @@
     <EmbeddedResource Include="FPostJob.resx">
       <DependentUpon>FPostJob.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FViewInterview.resx">
+      <DependentUpon>FViewInterview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -292,6 +322,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCHistory.resx">
+      <DependentUpon>UCHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCInterview.resx">
+      <DependentUpon>UCInterview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCJob.resx">
       <DependentUpon>UCJob.cs</DependentUpon>
     </EmbeddedResource>
