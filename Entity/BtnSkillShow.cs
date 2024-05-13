@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Entity
 {
     public class BtnSkillShow : Guna2Button
@@ -38,7 +39,7 @@ namespace Entity
             TabIndex = 4;
             Text = "guna2Button1";
             TextAlign = HorizontalAlignment.Left;
-
+            
         }
 
     }

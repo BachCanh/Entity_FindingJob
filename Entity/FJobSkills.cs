@@ -1,9 +1,14 @@
 ﻿using Guna.UI2.WinForms;
+using ReaLTaiizor.Controls;
+using Syncfusion.XPS;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -24,7 +29,7 @@ namespace Entity
         {
             InitializeComponent();
         }
-
+        
         private void FJobSKills_Load(object sender, EventArgs e)
         {
             SetAllButtonClick(pnBody);

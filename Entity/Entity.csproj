@@ -161,6 +161,18 @@
     <Compile Include="FAlertView.Designer.cs">
       <DependentUpon>FAlertView.cs</DependentUpon>
     </Compile>
+    <Compile Include="FAnswer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAnswer.Designer.cs">
+      <DependentUpon>FAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FApplicant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FApplicant.Designer.cs">
+      <DependentUpon>FApplicant.cs</DependentUpon>
+    </Compile>
     <Compile Include="FCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,11 +215,29 @@
     <Compile Include="FCVCreation_Project.Designer.cs">
       <DependentUpon>FCVCreation_Project.cs</DependentUpon>
     </Compile>
+    <Compile Include="FCompanyCVView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCompanyCVView.Designer.cs">
+      <DependentUpon>FCompanyCVView.cs</DependentUpon>
+    </Compile>
     <Compile Include="FFilter.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FFilter.Designer.cs">
       <DependentUpon>FFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FFindApplicant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFindApplicant.Designer.cs">
+      <DependentUpon>FFindApplicant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHistory.Designer.cs">
+      <DependentUpon>FHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="FindingJob.Context.cs">
       <AutoGen>True</AutoGen>
@@ -258,6 +288,24 @@
     <Compile Include="FJobPreference.Designer.cs">
       <DependentUpon>FJobPreference.cs</DependentUpon>
     </Compile>
+    <Compile Include="FJobCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FJobCreation.Designer.cs">
+      <DependentUpon>FJobCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FJobEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FJobEdit.Designer.cs">
+      <DependentUpon>FJobEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FJobPreferenceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FJobPreferenceView.Designer.cs">
+      <DependentUpon>FJobPreferenceView.cs</DependentUpon>
+    </Compile>
     <Compile Include="FJobSeeker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +351,36 @@
     <Compile Include="FSearchJob.Designer.cs">
       <DependentUpon>FSearchJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="FOffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FOffer.Designer.cs">
+      <DependentUpon>FOffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FPostJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPostJob.Designer.cs">
+      <DependentUpon>FPostJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FProfileCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FProfileCompany.Designer.cs">
+      <DependentUpon>FProfileCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FScheduleInterview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FScheduleInterview.Designer.cs">
+      <DependentUpon>FScheduleInterview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FViewInterview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FViewInterview.Designer.cs">
+      <DependentUpon>FViewInterview.cs</DependentUpon>
+    </Compile>
     <Compile Include="GetCompanyWithMostRecruitedCandidates_Result.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
@@ -344,6 +422,18 @@
     <Compile Include="UCAlert.Designer.cs">
       <DependentUpon>UCAlert.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCApplicant.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCApplicant.Designer.cs">
+      <DependentUpon>UCApplicant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCandidate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCandidate.Designer.cs">
+      <DependentUpon>UCCandidate.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCCarousel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -380,6 +470,24 @@
     <Compile Include="UCRates.Designer.cs">
       <DependentUpon>UCRates.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCHistory.Designer.cs">
+      <DependentUpon>UCHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCInterview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCInterview.Designer.cs">
+      <DependentUpon>UCInterview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCJob.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCJob.Designer.cs">
+      <DependentUpon>UCJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdatableJobView.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
@@ -388,6 +496,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FAlertView.resx">
       <DependentUpon>FAlertView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAnswer.resx">
+      <DependentUpon>FAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FApplicant.resx">
+      <DependentUpon>FApplicant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FCompany.resx">
       <DependentUpon>FCompany.cs</DependentUpon>
@@ -410,6 +524,9 @@
     <EmbeddedResource Include="FCVCreation_Project.resx">
       <DependentUpon>FCVCreation_Project.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FCompanyCVView.resx">
+      <DependentUpon>FCompanyCVView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FFilter.resx">
       <DependentUpon>FFilter.cs</DependentUpon>
     </EmbeddedResource>
@@ -424,6 +541,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FJobPreference.resx">
       <DependentUpon>FJobPreference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFindApplicant.resx">
+      <DependentUpon>FFindApplicant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FHistory.resx">
+      <DependentUpon>FHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FJobCreation.resx">
+      <DependentUpon>FJobCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FJobEdit.resx">
+      <DependentUpon>FJobEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FJobPreferenceView.resx">
+      <DependentUpon>FJobPreferenceView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FJobSeeker.resx">
       <DependentUpon>FJobSeeker.cs</DependentUpon>
@@ -446,6 +578,21 @@
     <EmbeddedResource Include="FSearchJob.resx">
       <DependentUpon>FSearchJob.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FOffer.resx">
+      <DependentUpon>FOffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPostJob.resx">
+      <DependentUpon>FPostJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProfileCompany.resx">
+      <DependentUpon>FProfileCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FScheduleInterview.resx">
+      <DependentUpon>FScheduleInterview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FViewInterview.resx">
+      <DependentUpon>FViewInterview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -458,6 +605,12 @@
     </Compile>
     <EmbeddedResource Include="UCAlert.resx">
       <DependentUpon>UCAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCApplicant.resx">
+      <DependentUpon>UCApplicant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCandidate.resx">
+      <DependentUpon>UCCandidate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCCarousel.resx">
       <DependentUpon>UCCarousel.cs</DependentUpon>
@@ -476,6 +629,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCRates.resx">
       <DependentUpon>UCRates.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="UCHistory.resx">
+      <DependentUpon>UCHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCInterview.resx">
+      <DependentUpon>UCInterview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCJob.resx">
+      <DependentUpon>UCJob.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="FindingJob.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -527,6 +690,10 @@
     <Content Include="Resources\skills.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\440897195_3406612266298649_2970478718896997327_n.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\plus.bmp" />
+    <None Include="Resources\skills.png" />
     <None Include="Resources\RedHeart.png" />
     <Content Include="Resources\project.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

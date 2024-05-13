@@ -14,6 +14,28 @@ namespace Entity
     
     public partial class Interview
     {
+        public Interview()
+        {
+
+        }
+        public Interview(string idJSeeker, string idJob, string timeInterview, DateTime dateInterview, string companyID)
+        {
+            this.IdJSeeker = idJSeeker;
+            this.IdJob = idJob;
+            this.TimeInterview = timeInterview;
+            this.DateInterview = dateInterview;
+            this.Status = "waiting";
+            this.companyID = companyID;
+        }
+        public Interview(string idJSeeker, string idJob, string timeInterview, string status, DateTime dateInterview, string companyID)
+        {
+            this.IdJSeeker = idJSeeker;
+            this.IdJob = idJob;
+            this.TimeInterview = timeInterview;
+            this.DateInterview = dateInterview;
+            this.Status = status;
+            this.companyID = companyID;
+        }
         public string IdJSeeker { get; set; }
         public string IdJob { get; set; }
         public string TimeInterview { get; set; }

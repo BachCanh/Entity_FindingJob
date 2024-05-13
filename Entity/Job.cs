@@ -20,7 +20,58 @@ namespace Entity
             this.Applies = new HashSet<Apply>();
             this.JobSeekerLikeJob = new HashSet<JobSeeker>();
         }
-    
+        public Job(string companyid, string jobname, string position, string salaryString, string requirement, string description, string benefit, string workingform, DateTime dateend)
+        {
+            this.CompanyID = companyid;
+            this.JobName = jobname;
+            this.Position = position;
+
+            decimal salary;
+            if (decimal.TryParse(salaryString, out salary))
+            {
+                // Conversion successful, assign the salary to the property
+                this.Salary = salary;
+            }
+            else
+            {
+                // Parsing failed, set salary to a default value (0 in this case)
+                this.Salary = 0;
+            }
+
+            this.requirement = requirement;
+            this.description = description;
+            this.benefit = benefit;
+            this.WorkingForm = workingform;
+            this.DateEnd = dateend;
+            this.status = "waiting";
+            this.DatePublish = DateTime.Now;
+        }
+        public Job(string jobid, string companyid, string jobname, string position, string salaryString, string requirement, string description, string benefit, DateTime datapublish, DateTime dateend, string status, string workingform)
+        {
+            this.JobID = jobid;
+            this.JobName = jobname;
+            this.CompanyID = companyid;
+            this.Position = position;
+            decimal salary;
+            if (decimal.TryParse(salaryString, out salary))
+            {
+                // Conversion successful, assign the salary to the property
+                this.Salary = salary;
+            }
+            else
+            {
+                // Parsing failed, set salary to a default value (0 in this case)
+                this.Salary = 0;
+            }
+            this.requirement = requirement;
+            this.description = description;
+            this.benefit = benefit;
+            this.DatePublish = datapublish;
+            this.DateEnd = dateend;
+            this.status = status;
+            this.WorkingForm = workingform;
+        }
+
         public string JobID { get; set; }
         public string CompanyID { get; set; }
         public string JobName { get; set; }

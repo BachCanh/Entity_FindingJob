@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Learning\Second Year\HK2\WIndows Programming\Entity\Entity\FindingJob.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\UTE\UTE2023and2024\Ki2\WindowsProgramming\Entity\Entity_FindingJob\Entity\FindingJob.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

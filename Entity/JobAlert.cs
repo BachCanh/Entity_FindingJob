@@ -14,6 +14,28 @@ namespace Entity
     
     public partial class JobAlert
     {
+        public JobAlert() { }
+
+        public JobAlert(string senderID, string recipientID, string subject, string content, string jobID)
+        {
+            this.senderID = senderID;
+            this.recipientID = recipientID;
+            this.Subject = subject;
+            this.content = content;
+            this.DateReply = DateTime.Now;
+            this.jobID = jobID;
+        }
+
+        public JobAlert(string id, string senderID, string recipientID, string subject, string content, string jobID)
+        {
+            this.id = id;
+            this.senderID = senderID;
+            this.recipientID = recipientID;
+            this.Subject = subject;
+            this.content = content;
+            this.DateReply = DateTime.Now;
+            this.jobID = jobID;
+        }
         public string id { get; set; }
         public string senderID { get; set; }
         public string recipientID { get; set; }

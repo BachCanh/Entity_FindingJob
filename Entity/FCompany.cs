@@ -26,7 +26,7 @@ namespace Entity
             InitializeComponent();
             this.account = account;
             GetAllButtons(panel2);
-            company = com.FetchCompanyInformationBasedEmail(account.Email);
+            this.company = com.FetchCompanyInformationBasedEmail(account.Email);
             SetStatusJobs();
         }
 
@@ -37,7 +37,7 @@ namespace Entity
             {
                 if(job.DateEnd < DateTime.Now)
                 {
-                    //jDAO.DoneJob(job.Jobid);
+                    jDAO.DoneJob(job.JobID);
                 }
             }
         }
@@ -118,27 +118,32 @@ namespace Entity
 
         private void btnPostJob_Click(object sender, EventArgs e)
         {
-            //company = new Company(informationDAO.FetchCommon(account));
-            //OpenChildForm(new FPostJob(company.Jobs, company.INFO.ID));
+            company = com.FetchCompanyInformationBasedEmail(account.Email);
+            List<Job> jobs = company.Jobs.ToList();
+            OpenChildForm(new FPostJob(jobs, company.ID));
         }
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            //company = new Company(informationDAO.FetchCommon(account));
-            //OpenChildForm(new FProfileCompany(company));
+            company = com.FetchCompanyInformationBasedEmail(account.Email);
+            OpenChildForm(new FProfileCompany(company));
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new FHistory(company.Jobs, company.INFO.ID));
+            company = com.FetchCompanyInformationBasedEmail(account.Email);
+            List<Job> jobs = company.Jobs.ToList();
+            OpenChildForm(new FHistory(jobs, company.ID));
         }
 
         private void btnInterviewView_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new FViewInterview(company));
+            OpenChildForm(new FViewInterview(company));
         }
         private void btnApplicant_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new FFindApplicant(company.INFO.ID));
+            OpenChildForm(new FFindApplicant(company.ID));
         }
+
+        
     }
 }
