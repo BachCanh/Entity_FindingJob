@@ -19,6 +19,7 @@ namespace Entity
         private Image imageclicked;
         private Form currentFormChild;
         private Account account;
+        
         private Company company = new Company();
         public FCompany(Account account)
         {

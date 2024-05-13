@@ -19,7 +19,7 @@
         <EntityTypeShape EntityType="FindingJob2Model.JobSkill" Width="1.5" PointX="7.5" PointY="22.125" IsExpanded="true" />
         <EntityTypeShape EntityType="FindingJob2Model.Table" Width="1.5" PointX="9.75" PointY="25.25" IsExpanded="true" />
         <EntityTypeShape EntityType="FindingJob2Model.Interview" Width="1.5" PointX="13.375" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FindingJob2Model.Rating" Width="1.5" PointX="12.125" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FindingJob2Model.Rating" Width="1.5" PointX="11.75" PointY="10.875" IsExpanded="true" />
         <AssociationConnector Association="FindingJob2Model.FK_AccountCompany" ManuallyRouted="false" />
         <AssociationConnector Association="FindingJob2Model.FK_AccountJobSeeker" ManuallyRouted="false" />
         <AssociationConnector Association="FindingJob2Model.FK__Apply__JobID__498EEC8D" ManuallyRouted="false" />

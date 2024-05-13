@@ -12,15 +12,9 @@ namespace Entity
         FindingJob db = new FindingJob();
         public List<Job> FetchAvailableJobs()
         {
-            List<Job> jobs = new List<Job>();
-
-            var availableJobs = db.Jobs.Where(j => j.status == "waiting")
-                                        .OrderByDescending(j => j.DatePublish)
-                                        .ToList();
-
-            jobs.AddRange(availableJobs);
-
-            return jobs;
+            List<Job> lst = new List<Job>();
+            lst = db.Jobs.Where(j => j.status == "waiting").ToList();
+            return lst;
         }
 
         public List<Job> FetchCompanyJob(string companyId)

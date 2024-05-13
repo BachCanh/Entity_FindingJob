@@ -111,6 +111,12 @@
     <Compile Include="Apply.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
+    <Compile Include="BtnSkill.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BtnSkillShow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Company.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
@@ -143,11 +149,65 @@
     <Compile Include="DAO\PDFHandler.cs" />
     <Compile Include="DAO\Project.cs" />
     <Compile Include="DAO\RatingDAO.cs" />
+    <Compile Include="FAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAlert.Designer.cs">
+      <DependentUpon>FAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FAlertView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAlertView.Designer.cs">
+      <DependentUpon>FAlertView.cs</DependentUpon>
+    </Compile>
     <Compile Include="FCompany.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FCompany.Designer.cs">
       <DependentUpon>FCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCompanyDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCompanyDetail.Designer.cs">
+      <DependentUpon>FCompanyDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCV.Designer.cs">
+      <DependentUpon>FCV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCVCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCVCreation.Designer.cs">
+      <DependentUpon>FCVCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCVCreation_Edu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCVCreation_Edu.Designer.cs">
+      <DependentUpon>FCVCreation_Edu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCVCreation_Exp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCVCreation_Exp.Designer.cs">
+      <DependentUpon>FCVCreation_Exp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCVCreation_Project.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCVCreation_Project.Designer.cs">
+      <DependentUpon>FCVCreation_Project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFilter.Designer.cs">
+      <DependentUpon>FFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="FindingJob.Context.cs">
       <AutoGen>True</AutoGen>
@@ -169,17 +229,79 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="FindingJob1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindingJob.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="FInterview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FInterview.Designer.cs">
+      <DependentUpon>FInterview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FJobByCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FJobByCompany.Designer.cs">
+      <DependentUpon>FJobByCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FJobDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FJobDetails.Designer.cs">
+      <DependentUpon>FJobDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FJobPreference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FJobPreference.Designer.cs">
+      <DependentUpon>FJobPreference.cs</DependentUpon>
+    </Compile>
     <Compile Include="FJobSeeker.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FJobSeeker.Designer.cs">
       <DependentUpon>FJobSeeker.cs</DependentUpon>
     </Compile>
+    <Compile Include="FJobSkills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FJobSKills.Designer.cs">
+      <DependentUpon>FJobSkills.cs</DependentUpon>
+    </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FProfile.Designer.cs">
+      <DependentUpon>FProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRate.Designer.cs">
+      <DependentUpon>FRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRatings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRatings.Designer.cs">
+      <DependentUpon>FRatings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSearchJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSearchJob.Designer.cs">
+      <DependentUpon>FSearchJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSearchJob.Designer.cs">
+      <DependentUpon>FSearchJob.cs</DependentUpon>
     </Compile>
     <Compile Include="GetCompanyWithMostRecruitedCandidates_Result.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
@@ -216,17 +338,113 @@
     <Compile Include="Table.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
+    <Compile Include="UCAlert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAlert.Designer.cs">
+      <DependentUpon>UCAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCarousel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCarousel.Designer.cs">
+      <DependentUpon>UCCarousel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEducation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEducation.Designer.cs">
+      <DependentUpon>UCEducation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCExperience.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCExperience.Designer.cs">
+      <DependentUpon>UCExperience.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCInformation.Designer.cs">
+      <DependentUpon>UCInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCProject.Designer.cs">
+      <DependentUpon>UCProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCRates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCRates.Designer.cs">
+      <DependentUpon>UCRates.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdatableJobView.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FAlert.resx">
+      <DependentUpon>FAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAlertView.resx">
+      <DependentUpon>FAlertView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FCompany.resx">
       <DependentUpon>FCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCompanyDetail.resx">
+      <DependentUpon>FCompanyDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCV.resx">
+      <DependentUpon>FCV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCVCreation.resx">
+      <DependentUpon>FCVCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCVCreation_Edu.resx">
+      <DependentUpon>FCVCreation_Edu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCVCreation_Exp.resx">
+      <DependentUpon>FCVCreation_Exp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCVCreation_Project.resx">
+      <DependentUpon>FCVCreation_Project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFilter.resx">
+      <DependentUpon>FFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FInterview.resx">
+      <DependentUpon>FInterview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FJobByCompany.resx">
+      <DependentUpon>FJobByCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FJobDetails.resx">
+      <DependentUpon>FJobDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FJobPreference.resx">
+      <DependentUpon>FJobPreference.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FJobSeeker.resx">
       <DependentUpon>FJobSeeker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FJobSKills.resx">
+      <DependentUpon>FJobSkills.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProfile.resx">
+      <DependentUpon>FProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRate.resx">
+      <DependentUpon>FRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRatings.resx">
+      <DependentUpon>FRatings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSearchJob.resx">
+      <DependentUpon>FSearchJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -238,13 +456,43 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCAlert.resx">
+      <DependentUpon>UCAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCarousel.resx">
+      <DependentUpon>UCCarousel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEducation.resx">
+      <DependentUpon>UCEducation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCExperience.resx">
+      <DependentUpon>UCExperience.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCInformation.resx">
+      <DependentUpon>UCInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCProject.resx">
+      <DependentUpon>UCProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCRates.resx">
+      <DependentUpon>UCRates.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="FindingJob.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FindingJob.Designer.cs</LastGenOutput>
+      <LastGenOutput>FindingJob1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="FindingJob.edmx.diagram">
       <DependentUpon>FindingJob.edmx</DependentUpon>
     </None>
+    <EmbeddedResource Include="fonts\arial\arial.ttf" />
+    <EmbeddedResource Include="fonts\arial\arialbd.ttf" />
+    <EmbeddedResource Include="fonts\arial\arialbi.ttf" />
+    <EmbeddedResource Include="fonts\arial\ariali.ttf" />
+    <EmbeddedResource Include="fonts\arial\ARIALN.TTF" />
+    <EmbeddedResource Include="fonts\arial\ARIALNB.TTF" />
+    <EmbeddedResource Include="fonts\arial\ARIALNBI.TTF" />
+    <EmbeddedResource Include="fonts\arial\ARIALNI.TTF" />
+    <EmbeddedResource Include="fonts\arial\ariblk.ttf" />
     <None Include="packages.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -274,12 +522,22 @@
       <DependentUpon>FindingJob.edmx</DependentUpon>
       <LastGenOutput>FindingJob.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\skills.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\approve.png" />
+    <Content Include="Resources\skills.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\RedHeart.png" />
-    <None Include="Resources\project.png" />
-    <None Include="Resources\portfolio.png" />
+    <Content Include="Resources\project.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\portfolio.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\noimg.jpg" />
-    <None Include="Resources\mortarboard.png" />
+    <Content Include="Resources\mortarboard.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\Image1.png" />
     <None Include="Resources\Image1.bmp" />
     <None Include="Resources\icons8-test-account-32.png" />
@@ -299,8 +557,12 @@
     <None Include="Resources\icons8-company-50.png" />
     <None Include="Resources\icons8-company-50 %281%29.png" />
     <None Include="Resources\DarkHeart.png" />
-    <None Include="Resources\coding.png" />
-    <None Include="Resources\avatar.png" />
+    <Content Include="Resources\coding.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\avatar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\434069927_1118623746146151_8820399568004975249_n.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -27,7 +27,33 @@ namespace Entity
             this.Jobs = new HashSet<Job>();
             this.Ratings = new HashSet<Rating>();
         }
-    
+
+        public  JobSeeker(string iD, string name, string email, string address, string phoneNumber, DateTime? dateOfBirth, string nationalID, byte[] avatar, string gender, CV cV)
+        {
+            ID = iD;
+            Name = name;
+            Email = email;
+            Address = address;
+            PhoneNumber = phoneNumber;
+            DateOfBirth = dateOfBirth;
+            NationalID = nationalID;
+            Avatar = avatar;
+            Gender = gender;
+            CV = cV;
+        }
+
+        public bool CheckAge(DateTime birthDate)
+        {
+            int age = DateTime.Now.Year - birthDate.Year;
+
+            // Check if the birthday has occurred this year
+            if (DateTime.Now.Month < birthDate.Month || (DateTime.Now.Month == birthDate.Month && DateTime.Now.Day < birthDate.Day))
+            {
+                age--;
+            }
+            return age > 15;
+        }
+
         public string ID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }

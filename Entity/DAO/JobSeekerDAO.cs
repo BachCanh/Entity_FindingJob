@@ -14,7 +14,9 @@ namespace Entity
         FindingJob db = new FindingJob();
         public JobSeeker FetchJobseekerWithEmail(string email)
         {
-            return db.JobSeekers.FirstOrDefault(x => x.Email == email);
+            JobSeeker js = db.JobSeekers.FirstOrDefault(x => x.Email == email);
+
+            return js;
         }
 
         public string FetchName(string id)

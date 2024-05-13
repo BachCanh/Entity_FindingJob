@@ -20,23 +20,23 @@ namespace Entity
             // Check if the company exists and if it has an image
             if (company != null)
             {
-                if (company.ImgID1 != null)
+                if (company.ImgID1 != null && company.ImgID1.Length > 0)
                 {
                     list.Add(ImageHandler.ByteArrayToImage(company.ImgID1));
                 }
-                if (company.ImgID2 != null)
+                if (company.ImgID2 != null && company.ImgID2.Length > 0)
                 {
                     list.Add(ImageHandler.ByteArrayToImage(company.ImgID2));
                 }
-                if (company.ImgID3 != null)
+                if (company.ImgID3 != null && company.ImgID3.Length > 0)
                 {
                     list.Add(ImageHandler.ByteArrayToImage(company.ImgID3));
                 }
-                if (company.ImgID4 != null)
+                if (company.ImgID4 != null && company.ImgID4.Length > 0)
                 {
                     list.Add(ImageHandler.ByteArrayToImage(company.ImgID4));
                 }
-                if (company.ImgID5 != null)
+                if (company.ImgID5 != null && company.ImgID5.Length > 0)
                 {
                     list.Add(ImageHandler.ByteArrayToImage(company.ImgID5));
                 }

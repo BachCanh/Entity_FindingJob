@@ -4,11 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormProject;
-
+using Transitions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace Entity
 {
@@ -19,11 +20,13 @@ namespace Entity
         private Image imageclicked;
         private JobSeeker jobSeeker = new JobSeeker();
         private Account account = new Account();
+        private JobSeekerDAO js = new JobSeekerDAO();
 
         public FJobSeeker(Account account)
         {
             InitializeComponent();
             this.account = account;
+            jobSeeker = js.FetchJobseekerWithEmail(account.Email);
         }
 
         private void FJobSeeker_Load(object sender, EventArgs e)
@@ -84,31 +87,28 @@ namespace Entity
 
         private void btnJobAlert_Click(object sender, EventArgs e)
         {
-            //jobSeeker = new JobSeeker(informationDAO.FetchCommon(account));
-            //pnBody.Controls.Clear();
-            //pnBody.Visible = true;
-            //FAlert fSupJobSection = new FAlert(jobSeeker);
-            //OpenChildForm(pnBody, fSupJobSection);
+            pnBody.Controls.Clear();
+            pnBody.Visible = true;
+            FAlert fSupJobSection = new FAlert(jobSeeker);
+            OpenChildForm(pnBody, fSupJobSection);
         }
 
         private void btnSearchJob_Click(object sender, EventArgs e)
         {
-            //jobSeeker = new JobSeeker(informationDAO.FetchCommon(account));
-            //pnBody.Visible = true;
-            //pnBody.Dock = DockStyle.Fill;
-            //pnBody.BringToFront();
-            //FSearchJob fSearchJob = new FSearchJob(jobSeeker.INFO.ID);
-            //OpenChildForm(pnBody, fSearchJob);
+            pnBody.Visible = true;
+            pnBody.Dock = DockStyle.Fill;
+            pnBody.BringToFront();
+            FSearchJob fSearchJob = new FSearchJob(jobSeeker.ID);
+            OpenChildForm(pnBody, fSearchJob);
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            //jobSeeker = new JobSeeker(informationDAO.FetchCommon(account));
-            //pnBody.Visible = true;
-            //pnBody.Dock = DockStyle.Fill;
-            //pnBody.BringToFront();
-            //FProfile fProfile = new FProfile(jobSeeker);
-            //OpenChildForm(pnBody, fProfile);
+            pnBody.Visible = true;
+            pnBody.Dock = DockStyle.Fill;
+            pnBody.BringToFront();
+            FProfile fProfile = new FProfile(jobSeeker);
+            OpenChildForm(pnBody, fProfile);
         }
         private void btnLogOut_Click(object sender, EventArgs e)
         {
@@ -130,5 +130,9 @@ namespace Entity
             }
         }
 
+        private void btnSearchJob_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -26,7 +26,22 @@ namespace Entity
             this.JobSeekerLikeCompany = new HashSet<JobSeeker>();
             this.Ratings = new HashSet<Rating>();
         }
-    
+
+        public bool CheckDownTrend()
+        {
+            ApplyDAO applyDAO = new ApplyDAO();
+            foreach (Job j in Jobs)
+            {
+                foreach (string str in applyDAO.FetchStatusApply(j.JobID))
+                {
+                    if (str.ToLower() == "approve")
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         public string ID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }

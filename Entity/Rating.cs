@@ -16,7 +16,7 @@ namespace Entity
     {
         public string JobSeekerID { get; set; }
         public string CompanyID { get; set; }
-        public Nullable<System.DateTime> TimeRate { get; set; }
+        public System.DateTime TimeRate { get; set; }
         public string content { get; set; }
         public Nullable<int> rate { get; set; }
     

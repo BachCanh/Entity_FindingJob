@@ -82,7 +82,7 @@ namespace Entity
             string companyId = null;
 
             // Execute the SQL query to call the function and retrieve the result
-            var result = db.Database.SqlQuery<int>("SELECT TOP(1) IDcompany FROM GetCompanyWithMostRecruitedCandidates()").FirstOrDefault();
+            var result = db.Database.SqlQuery<string>("SELECT TOP(1) IDcompany FROM GetCompanyWithMostRecruitedCandidates()").FirstOrDefault();
 
             // Assign the result to the companyId variable
             companyId = result.ToString();

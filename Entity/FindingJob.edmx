@@ -200,16 +200,14 @@ warning 6002: The table/view 'FindingJob2.dbo.Interview' does not have a primary
           <Property Name="Skill2" Type="varchar" MaxLength="50" />
           <Property Name="Skill3" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'FindingJob2.dbo.Rating' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Rating">
           <Key>
             <PropertyRef Name="JobSeekerID" />
-            <PropertyRef Name="CompanyID" />
+            <PropertyRef Name="TimeRate" />
           </Key>
           <Property Name="JobSeekerID" Type="varchar" MaxLength="4" Nullable="false" />
           <Property Name="CompanyID" Type="varchar" MaxLength="4" Nullable="false" />
-          <Property Name="TimeRate" Type="datetime" />
+          <Property Name="TimeRate" Type="datetime" Nullable="false" />
           <Property Name="content" Type="varchar" MaxLength="255" />
           <Property Name="rate" Type="int" />
         </EntityType>
@@ -371,6 +369,30 @@ warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Rating__CompanyI__573DED66">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rating">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rating__JobSeeke__5649C92D">
+          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
+          <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobSeeker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Rating">
+              <PropertyRef Name="JobSeekerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Table__Jobseeker__2116E6DF">
           <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
           <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
@@ -529,32 +551,6 @@ warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Rating_Company">
-          <End Role="Company" Type="Self.Company" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Company">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Rating">
-              <PropertyRef Name="CompanyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Rating_JobSeeker">
-          <End Role="JobSeeker" Type="Self.JobSeeker" Multiplicity="1" />
-          <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="JobSeeker">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Rating">
-              <PropertyRef Name="JobSeekerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Function Name="CountWaitingJobs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="GetCompanyWithMostRecruitedCandidates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <ReturnType>
@@ -601,6 +597,7 @@ warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a 
           <EntitySet Name="JobSeekerLikeCompany" EntityType="Self.JobSeekerLikeCompany" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JobSeekerLikeJob" EntityType="Self.JobSeekerLikeJob" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JobSkill" EntityType="Self.JobSkill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Interview" EntityType="Self.Interview" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -611,15 +608,6 @@ warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a 
     [Interview].[Status] AS [Status], 
     [Interview].[companyID] AS [companyID]
     FROM [dbo].[Interview] AS [Interview]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Rating" EntityType="Self.Rating" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Rating].[JobSeekerID] AS [JobSeekerID], 
-    [Rating].[CompanyID] AS [CompanyID], 
-    [Rating].[TimeRate] AS [TimeRate], 
-    [Rating].[content] AS [content], 
-    [Rating].[rate] AS [rate]
-    FROM [dbo].[Rating] AS [Rating]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="UpdatableJobView" EntityType="Self.UpdatableJobView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -678,6 +666,14 @@ warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a 
             <End Role="Job" EntitySet="Job" />
             <End Role="JobSkill" EntitySet="JobSkill" />
           </AssociationSet>
+          <AssociationSet Name="FK__Rating__CompanyI__573DED66" Association="Self.FK__Rating__CompanyI__573DED66">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Rating" EntitySet="Rating" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rating__JobSeeke__5649C92D" Association="Self.FK__Rating__JobSeeke__5649C92D">
+            <End Role="JobSeeker" EntitySet="JobSeeker" />
+            <End Role="Rating" EntitySet="Rating" />
+          </AssociationSet>
           <AssociationSet Name="FK__Table__Jobseeker__2116E6DF" Association="Self.FK__Table__Jobseeker__2116E6DF">
             <End Role="JobSeeker" EntitySet="JobSeeker" />
             <End Role="Table" EntitySet="Table" />
@@ -729,14 +725,6 @@ warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a 
           <AssociationSet Name="FK_JobSeekerLikeJob_JobSeekerID" Association="Self.FK_JobSeekerLikeJob_JobSeekerID">
             <End Role="JobSeeker" EntitySet="JobSeeker" />
             <End Role="JobSeekerLikeJob" EntitySet="JobSeekerLikeJob" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Rating_Company" Association="Self.FK_Rating_Company">
-            <End Role="Company" EntitySet="Company" />
-            <End Role="Rating" EntitySet="Rating" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Rating_JobSeeker" Association="Self.FK_Rating_JobSeeker">
-            <End Role="JobSeeker" EntitySet="JobSeeker" />
-            <End Role="Rating" EntitySet="Rating" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -962,11 +950,11 @@ warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a 
         <EntityType Name="Rating">
           <Key>
             <PropertyRef Name="JobSeekerID" />
-            <PropertyRef Name="CompanyID" />
+            <PropertyRef Name="TimeRate" />
           </Key>
           <Property Name="JobSeekerID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CompanyID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TimeRate" Type="DateTime" Precision="3" />
+          <Property Name="TimeRate" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="content" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="rate" Type="Int32" />
           <NavigationProperty Name="Company" Relationship="FindingJob2Model.FK_Rating_Company" FromRole="Rating" ToRole="Company" />

@@ -20,14 +20,13 @@ namespace Entity
             this.Companies = new HashSet<Company>();
             this.JobSeekers = new HashSet<JobSeeker>();
         }
-
-        public  Account(string email, string password, string type)
+        
+        public Account(string email, string password, string type)
         {
-            Email = email;
-            Password = password;
-            Type = type;
+            this.Email = email;
+            this.Password = password;
+            this.Type = type;
         }
-
         public string Email { get; set; }
         public string Password { get; set; }
         public string Type { get; set; }
