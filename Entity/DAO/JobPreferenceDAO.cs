@@ -14,7 +14,7 @@ namespace Entity
         {
             return db.JobPreferences.FirstOrDefault(jp => jp.JobSeekerID == jobseekerid);
         }
-        public void FetchAllJobPreference(List<JobPreference> list)
+        public void FetchAllJobPreference(ref List<JobPreference> list)
         {
             list = db.JobPreferences.ToList();
         }

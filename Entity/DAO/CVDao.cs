@@ -10,7 +10,7 @@ namespace Entity
     public class CVDao
     {
         FindingJob db = new FindingJob();
-        public void FetchAllInformationOfCV(string jobseekerid, CV cv)
+        public void FetchAllInformationOfCV(string jobseekerid,ref CV cv)
         {
             cv = db.CVs.FirstOrDefault(c => c.JobSeekerID == jobseekerid);
         }

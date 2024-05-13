@@ -140,7 +140,7 @@ namespace Entity
         }
         private void btnApplicant_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new FFindApplicant(company.INFO.ID));
+            OpenChildForm(new FFindApplicant(company.ID));
         }
 
         

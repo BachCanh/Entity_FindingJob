@@ -39,7 +39,6 @@ namespace Entity
             this.panel1 = new System.Windows.Forms.Panel();
             this.metroControlBox3 = new ReaLTaiizor.Controls.MetroControlBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnBody = new System.Windows.Forms.Panel();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnApplicant = new Guna.UI2.WinForms.Guna2Button();
             this.btnInterviewView = new Guna.UI2.WinForms.Guna2Button();
@@ -47,6 +46,7 @@ namespace Entity
             this.btnHistory = new Guna.UI2.WinForms.Guna2Button();
             this.btnPostJob = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pnBody = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -108,16 +108,6 @@ namespace Entity
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(231, 719);
             this.panel2.TabIndex = 3;
-            // 
-            // pnBody
-            // 
-            this.pnBody.AutoScroll = true;
-            this.pnBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnBody.Location = new System.Drawing.Point(231, 26);
-            this.pnBody.Margin = new System.Windows.Forms.Padding(4);
-            this.pnBody.Name = "pnBody";
-            this.pnBody.Size = new System.Drawing.Size(1252, 719);
-            this.pnBody.TabIndex = 4;
             // 
             // btnLogOut
             // 
@@ -302,6 +292,16 @@ namespace Entity
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            // 
+            // pnBody
+            // 
+            this.pnBody.AutoScroll = true;
+            this.pnBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnBody.Location = new System.Drawing.Point(231, 26);
+            this.pnBody.Margin = new System.Windows.Forms.Padding(4);
+            this.pnBody.Name = "pnBody";
+            this.pnBody.Size = new System.Drawing.Size(1252, 719);
+            this.pnBody.TabIndex = 4;
             // 
             // FCompany
             // 

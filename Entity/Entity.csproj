@@ -114,6 +114,9 @@
     <Compile Include="BtnSkill.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BtnSkillShow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Company.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
@@ -152,11 +155,23 @@
     <Compile Include="FCompany.Designer.cs">
       <DependentUpon>FCompany.cs</DependentUpon>
     </Compile>
+    <Compile Include="FCompanyCVView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCompanyCVView.Designer.cs">
+      <DependentUpon>FCompanyCVView.cs</DependentUpon>
+    </Compile>
     <Compile Include="FFilter.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FFilter.Designer.cs">
       <DependentUpon>FFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FFindApplicant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FFindApplicant.Designer.cs">
+      <DependentUpon>FFindApplicant.cs</DependentUpon>
     </Compile>
     <Compile Include="FHistory.cs">
       <SubType>Form</SubType>
@@ -195,6 +210,12 @@
     </Compile>
     <Compile Include="FJobEdit.Designer.cs">
       <DependentUpon>FJobEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FJobPreferenceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FJobPreferenceView.Designer.cs">
+      <DependentUpon>FJobPreferenceView.cs</DependentUpon>
     </Compile>
     <Compile Include="FJobSeeker.cs">
       <SubType>Form</SubType>
@@ -261,6 +282,12 @@
     <Compile Include="Table.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
+    <Compile Include="UCCandidate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCandidate.Designer.cs">
+      <DependentUpon>UCCandidate.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCHistory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -285,8 +312,14 @@
     <EmbeddedResource Include="FCompany.resx">
       <DependentUpon>FCompany.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FCompanyCVView.resx">
+      <DependentUpon>FCompanyCVView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FFilter.resx">
       <DependentUpon>FFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFindApplicant.resx">
+      <DependentUpon>FFindApplicant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FHistory.resx">
       <DependentUpon>FHistory.cs</DependentUpon>
@@ -296,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FJobEdit.resx">
       <DependentUpon>FJobEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FJobPreferenceView.resx">
+      <DependentUpon>FJobPreferenceView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FJobSeeker.resx">
       <DependentUpon>FJobSeeker.cs</DependentUpon>
@@ -322,6 +358,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCCandidate.resx">
+      <DependentUpon>UCCandidate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCHistory.resx">
       <DependentUpon>UCHistory.cs</DependentUpon>
     </EmbeddedResource>
