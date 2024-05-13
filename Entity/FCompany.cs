@@ -28,6 +28,7 @@ namespace Entity
             GetAllButtons(panel2);
             this.company = com.FetchCompanyInformationBasedEmail(account.Email);
             SetStatusJobs();
+            btnLogOut.Click += btnLogOut_Click;
         }
 
         private void SetStatusJobs()

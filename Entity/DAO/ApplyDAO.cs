@@ -17,12 +17,11 @@ namespace Entity
             db.SaveChanges();
         }
 
-        public List<Apply> AllApplies(string jsID)
+        public List<Apply> AllApplies(string jobID)
         {
             List<Apply> applies = new List<Apply>();
 
-            var allApplies = db.Applies.Where(apply => apply.JobSeekerID == jsID).ToList();
-            applies.AddRange(allApplies);
+            applies = db.Applies.Where(apply => apply.JobID == jobID && apply.Status.Trim().ToLower() != "done").ToList();
             return applies;
         }
 

@@ -44,7 +44,7 @@ namespace Entity
             pnSubBody.Controls.Clear();
             foreach (Job job in joblist)
             {
-                if (job.status.Trim().ToLower() == "Waiting".ToLower())
+                if (job.status.Trim().ToLower() == "waiting".ToLower())
                 {
                     UCJob uCJob = new UCJob(job);
                     uCJob.JobDone += JobDone_Handle;
