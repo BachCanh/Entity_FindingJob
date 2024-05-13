@@ -36,6 +36,7 @@ namespace Entity
             this.DateReply = DateTime.Now;
             this.jobID = jobID;
         }
+
         public string id { get; set; }
         public string senderID { get; set; }
         public string recipientID { get; set; }

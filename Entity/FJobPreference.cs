@@ -153,7 +153,7 @@ namespace Entity
             {
                 JobPreferenceDAO.UpdateJobPreference(jobpreference);
             }
-            
+            this.Close();   
         }
     }
 }

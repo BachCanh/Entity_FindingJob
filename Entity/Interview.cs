@@ -36,11 +36,13 @@ namespace Entity
             this.Status = status;
             this.companyID = companyID;
         }
+
         public string IdJSeeker { get; set; }
         public string IdJob { get; set; }
         public string TimeInterview { get; set; }
         public Nullable<System.DateTime> DateInterview { get; set; }
         public string Status { get; set; }
         public string companyID { get; set; }
+        public System.DateTime DateOffer { get; set; }
     }
 }

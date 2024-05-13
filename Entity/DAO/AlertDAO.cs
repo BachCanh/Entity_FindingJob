@@ -11,10 +11,15 @@ namespace Entity
         FindingJob db = new FindingJob();
         public void InsertAlert(JobAlert alert)
         {
+            alert.id = GenerateID();
             db.JobAlerts.Add(alert);
             db.SaveChanges();
         }
 
+        private string GenerateID()
+        {
+            return Guid.NewGuid().ToString("N").Substring(0, 4);
+        }
         public List<JobAlert> FetchAlert(string recipientID)
         {
             List<JobAlert> alerts = new List<JobAlert>();

@@ -13,8 +13,11 @@ namespace Entity
 
         public void InsertApply(Apply apply)
         {
-            db.Applies.Add(apply);
-            db.SaveChanges();
+            using (var db = new FindingJob())
+            {
+                db.Applies.Add(apply);
+                db.SaveChanges();
+            }
         }
 
         public List<Apply> AllApplies(string jobID)

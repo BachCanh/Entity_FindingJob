@@ -26,6 +26,7 @@ namespace Entity
             this.JobSeekerLikeCompany = new HashSet<JobSeeker>();
             this.Ratings = new HashSet<Rating>();
         }
+
         public Company(string iD, string name, string email, string address, string companyType, string companySize, string phonenumber, string workingTimeBegin, byte[] avatar, string workingTimeEnd, string taxIdentification, byte[] businessLicense, string detail, string websiteLink)
         {
             ID = iD;
@@ -62,6 +63,7 @@ namespace Entity
             }
             return true;
         }
+
         public string ID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }

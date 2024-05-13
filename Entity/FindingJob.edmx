@@ -88,12 +88,10 @@
           <Property Name="ImgID4" Type="varbinary(max)" />
           <Property Name="ImgID5" Type="varbinary(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'FindingJob2.dbo.Interview' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Interview">
           <Key>
             <PropertyRef Name="IdJSeeker" />
-            <PropertyRef Name="IdJob" />
+            <PropertyRef Name="DateOffer" />
           </Key>
           <Property Name="IdJSeeker" Type="varchar" MaxLength="4" Nullable="false" />
           <Property Name="IdJob" Type="varchar" MaxLength="4" Nullable="false" />
@@ -101,6 +99,7 @@ warning 6002: The table/view 'FindingJob2.dbo.Interview' does not have a primary
           <Property Name="DateInterview" Type="date" />
           <Property Name="Status" Type="varchar" MaxLength="100" />
           <Property Name="companyID" Type="varchar" MaxLength="4" />
+          <Property Name="DateOffer" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Job">
           <Key>
@@ -589,6 +588,7 @@ warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a 
           <EntitySet Name="CompanySendOffer" EntityType="Self.CompanySendOffer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CV" EntityType="Self.CV" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ImgCompany" EntityType="Self.ImgCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Interview" EntityType="Self.Interview" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JobAlert" EntityType="Self.JobAlert" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JobOffer" EntityType="Self.JobOffer" Schema="dbo" store:Type="Tables" />
@@ -599,16 +599,6 @@ warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a 
           <EntitySet Name="JobSkill" EntityType="Self.JobSkill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Interview" EntityType="Self.Interview" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Interview].[IdJSeeker] AS [IdJSeeker], 
-    [Interview].[IdJob] AS [IdJob], 
-    [Interview].[TimeInterview] AS [TimeInterview], 
-    [Interview].[DateInterview] AS [DateInterview], 
-    [Interview].[Status] AS [Status], 
-    [Interview].[companyID] AS [companyID]
-    FROM [dbo].[Interview] AS [Interview]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="UpdatableJobView" EntityType="Self.UpdatableJobView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [UpdatableJobView].[JobID] AS [JobID], 
@@ -938,7 +928,7 @@ warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a 
         <EntityType Name="Interview">
           <Key>
             <PropertyRef Name="IdJSeeker" />
-            <PropertyRef Name="IdJob" />
+            <PropertyRef Name="DateOffer" />
           </Key>
           <Property Name="IdJSeeker" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IdJob" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
@@ -946,6 +936,7 @@ warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a 
           <Property Name="DateInterview" Type="DateTime" Precision="0" />
           <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="companyID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="DateOffer" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="Rating">
           <Key>
@@ -1508,6 +1499,7 @@ warning 6002: The table/view 'FindingJob2.dbo.UpdatableJobView' does not have a 
           <EntitySetMapping Name="Interviews">
             <EntityTypeMapping TypeName="FindingJob2Model.Interview">
               <MappingFragment StoreEntitySet="Interview">
+                <ScalarProperty Name="DateOffer" ColumnName="DateOffer" />
                 <ScalarProperty Name="IdJSeeker" ColumnName="IdJSeeker" />
                 <ScalarProperty Name="IdJob" ColumnName="IdJob" />
                 <ScalarProperty Name="TimeInterview" ColumnName="TimeInterview" />

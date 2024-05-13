@@ -129,6 +129,9 @@
     <Compile Include="CV.cs">
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
+    <Compile Include="CV.cs">
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\AlertDAO.cs" />
     <Compile Include="DAO\ApplyDAO.cs" />
@@ -249,6 +252,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FindingJob.tt</DependentUpon>
     </Compile>
+    <Compile Include="FindingJob.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindingJob.tt</DependentUpon>
+    </Compile>
     <Compile Include="FindingJob.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -260,6 +268,16 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="FindingJob1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindingJob.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="FindingJob2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindingJob.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="FindingJob2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FindingJob.edmx</DependentUpon>
@@ -630,7 +648,6 @@
     <EmbeddedResource Include="UCRates.resx">
       <DependentUpon>UCRates.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="UCHistory.resx">
       <DependentUpon>UCHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -642,7 +659,7 @@
     </EmbeddedResource>
     <EntityDeploy Include="FindingJob.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FindingJob1.Designer.cs</LastGenOutput>
+      <LastGenOutput>FindingJob2.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="FindingJob.edmx.diagram">
       <DependentUpon>FindingJob.edmx</DependentUpon>
@@ -678,7 +695,7 @@
     <Content Include="FindingJob.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FindingJob.edmx</DependentUpon>
-      <LastGenOutput>FindingJob.Context.cs</LastGenOutput>
+      <LastGenOutput>FindingJob.Context1.cs</LastGenOutput>
     </Content>
     <Content Include="FindingJob.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

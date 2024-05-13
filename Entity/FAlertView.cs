@@ -59,7 +59,7 @@ namespace Entity
         }
         private void EnableButton(string status)
         {
-            if (status.Trim() == "Offering")
+            if (status.Trim() == "Offering") 
             {
                 btnAccept.Visible = true;
                 btnReject.Visible = true;
@@ -103,8 +103,8 @@ namespace Entity
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            jobOfferDAO.OfferSetStatus(JobOffer.senderID, JobOffer.recipientID, "Accept");
-            companySendOfferDAO.OfferSetStatus(JobOffer.senderID, JobOffer.recipientID, "Accept");
+            jobOfferDAO.OfferSetStatus(JobOffer.senderID, JobOffer.recipientID, "Accepted");
+            companySendOfferDAO.OfferSetStatus(JobOffer.senderID, JobOffer.recipientID, "Accepted");
             interviewDAO.SetStatusForInterview(JobOffer.recipientID, "", "Accepted", JobOffer.senderID);
             this.JobOffer.Status = "Accepted";
             StartUp(this.JobOffer);
@@ -112,8 +112,8 @@ namespace Entity
 
         private void btnReject_Click(object sender, EventArgs e)
         {
-            jobOfferDAO.OfferSetStatus(JobOffer.senderID, JobOffer.recipientID, "Reject");
-            companySendOfferDAO.OfferSetStatus(JobOffer.senderID, JobOffer.recipientID, "Reject");
+            jobOfferDAO.OfferSetStatus(JobOffer.senderID, JobOffer.recipientID, "Rejected");
+            companySendOfferDAO.OfferSetStatus(JobOffer.senderID, JobOffer.recipientID, "Rejected");
             interviewDAO.SetStatusForInterview(JobOffer.recipientID, "", "Rejected", JobOffer.senderID);
             this.JobOffer.Status = "Rejected";
             this.btnAccept.Visible = false;

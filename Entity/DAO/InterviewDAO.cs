@@ -15,13 +15,18 @@ namespace Entity
 
         public void InsertInterview(Interview interview)
         {
-            if (FetchInterview(interview.IdJSeeker, interview.companyID, interview.IdJob).Status.Trim().ToLower() == "waiting")
+            Interview inter = FetchInterview(interview.IdJSeeker, interview.companyID, interview.IdJob);
+            if (inter is null)
+            {
+                db.Interviews.Add(interview);
+                db.SaveChangesAsync();
+                return;
+            }
+            else if (inter.Status.Trim().ToLower() == "waiting")
             {
                 MessageBox.Show("There are a interview have already schedule with this jobseeker!!");
                 return;
             }
-            db.Interviews.Add(interview);
-            db.SaveChanges();
         }
 
         public List<Interview> FetchInterviewByID(string companyID)
@@ -33,7 +38,9 @@ namespace Entity
 
         public Interview FetchInterview(string jsID, string companyID, string jobID)
         {
-            return db.Interviews.FirstOrDefault(i => i.IdJob == jobID && i.companyID == companyID && i.IdJSeeker == jsID);
+            Interview interview = new Interview();
+            interview = db.Interviews.FirstOrDefault(i => i.IdJob == jobID && i.companyID == companyID && i.IdJSeeker == jsID);
+            return interview;
         }
 
         public void SetStatusForInterview(string jobseekerid, string jobid, string status, string companyID)
@@ -42,7 +49,7 @@ namespace Entity
             if (inter != null)
             {
                 inter.Status = status;
-                db.SaveChanges();
+                db.SaveChangesAsync();
             }
             else
             {
@@ -52,11 +59,12 @@ namespace Entity
 
         public void DeletedNewInterview(string jobseekerid, string jobid, string companyid)
         {
-            var inter = db.Interviews.FirstOrDefault(i => i.IdJSeeker == jobseekerid && i.IdJob == jobid && i.companyID == companyid);
+            db = new FindingJob();
+            var inter = db.Interviews.FirstOrDefault(i => i.IdJSeeker == jobseekerid && i.IdJob == jobid && i.companyID == companyid && i.Status.Trim().ToLower() == "waiting");
             if (inter != null)
             {
                 db.Interviews.Remove(inter);
-                db.SaveChanges();
+                db.SaveChangesAsync();
             }
             else
             {

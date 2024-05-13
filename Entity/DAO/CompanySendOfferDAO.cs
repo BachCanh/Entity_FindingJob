@@ -13,8 +13,9 @@ namespace Entity
         FindingJob db = new FindingJob();
         public void Insert(CompanySendOffer entity)
         {
+            entity.Status = "Offering";
             db.CompanySendOffers.Add(entity);
-            db.SaveChanges();
+            db.SaveChangesAsync();
         }
 
         public bool AlreadySent(string jobseekerId, string companyId)
@@ -42,8 +43,11 @@ namespace Entity
             var cso = db.CompanySendOffers.FirstOrDefault(c => c.CompanyID == companyid && c.JobSeekerID == jobseekerid);
             if (cso != null)
             {
-                cso.Status = status;
-                db.SaveChanges();
+                if(status.ToLower() == "rejected")
+                {
+                    db.CompanySendOffers.Remove(cso);
+                    db.SaveChangesAsync();
+                }
             }
             else
             {

@@ -12,8 +12,14 @@ namespace Entity
         FindingJob db = new FindingJob();
         public void InsertOffer(JobOffer offer)
         {
+            offer.id = GenerateID();
             db.JobOffers.Add(offer);
             db.SaveChanges();
+        }
+
+        private string GenerateID()
+        {
+            return Guid.NewGuid().ToString("N").Substring(0, 4);
         }
 
         public List<JobOffer> FetchOffers(string jobseekerid)
@@ -27,7 +33,7 @@ namespace Entity
             if (jo != null)
             {
                 jo.Status = status;
-                db.SaveChanges();
+                db.SaveChangesAsync();
             }
             else
             {

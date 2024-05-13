@@ -37,7 +37,7 @@ namespace Entity
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if(interview.Status.ToLower() != "waiting")
+            if(interview.Status.Trim().ToLower() == "waiting")
             {
                 AlertDAO dAO = new AlertDAO();
                 JobAlert alert = new JobAlert(job.CompanyID, apply.JobSeekerID, cbbSubject.Text, txtContent.Text, job.JobID);
